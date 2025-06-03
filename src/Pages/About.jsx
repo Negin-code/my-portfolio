@@ -105,7 +105,7 @@ const About = () => {
             <div className="lg:col-span-7">
               <HeroContent
                 title="Hi, I'm Negin"
-                description="A UX/UI designer and front-end developer blending logic with empathy to create meaningful digital experiences. With a foundation in software engineering and a passion for human-centered design, I thrive on transforming complex problems into intuitive, elegant solutions. Whether I'm coding an interactive interface or designing a mindful app for caregivers, I bring curiosity, adaptability, and a deep respect for the user to every project."
+                description="A UX/UI designer and front-end developer blending logic with empathy to create meaningful digital experiences. With a foundation in software engineering and a passion for human-centered design, I thrive at the intersection of creativity and functionality. I am in the last steps of studying New Media Design and Web Development at BCIT, where I’ve built strong foundations in everything from brand strategy and UI systems to creative coding. Beyond the classroom, I’ve collaborated with community organizations and innovation labs to design services and tools that support real people in meaningful ways."
               />
             </div>
           </div>
@@ -113,10 +113,7 @@ const About = () => {
 
         <div className="pl-22 lg:pl-0 pr-10 lg:pr-0">
           <p className="text-[#493B32] leading-relaxed text-base md:text-lg mt-2 sm:mt-4 lg:mt-6">
-            As a student representative, I've learned the power of listening,
-            empathy, and being a voice for others. These same values guide my
-            work: thoughtful communication, collaboration, and a deep curiosity
-            to keep learning.
+          When I’m not designing, you’ll likely find me enjoying a good coffee, reading a book, capturing a moment through photography, or reflecting on how small details shape big experiences.
           </p>
         </div>
 
