@@ -1079,246 +1079,124 @@ const Guardian = () => {
           {/* Features Carousel Container */}
           <div className="mt-12 relative">
             {/* Left Gradient Overlay */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
+            <div 
+              className="absolute left-0 top-0 bottom-0 w-8 md:w-16 z-10"
+              style={{
+                background: 'linear-gradient(to right, #FFF7F2, transparent)'
+              }}
+            ></div>
             
             {/* Right Gradient Overlay */}
-            <div className="absolute right-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
+            <div 
+              className="absolute right-0 top-0 bottom-0 w-8 md:w-16 z-10"
+              style={{
+                background: 'linear-gradient(to left, #FFF7F2, transparent)'
+              }}
+            ></div>
 
-            {/* Scrollable Container */}
-            <div className="overflow-x-auto pb-8 hide-scrollbar">
-              <div className="flex gap-6 px-8 md:px-16 min-w-max">
-                {/* Timer Setup Feature */}
-                <div className="w-[90vw] md:w-[800px] bg-white rounded-2xl p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 items-center group hover:bg-[#493B32] transition-all duration-500">
-                  {/* Content */}
-                  <div className="flex-1 transition-all duration-500">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 md:w-16 h-12 md:h-16 rounded-xl bg-[#493B32]/10 group-hover:bg-white/10 flex items-center justify-center transition-all duration-500">
-                        <span className="text-2xl md:text-3xl font-bold text-[#493B32] group-hover:text-white">1</span>
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-medium text-[#493B32] group-hover:text-white">Timer Setup</h3>
-                    </div>
-                    <p className="text-[#493B32]/80 group-hover:text-white/90 text-base md:text-lg leading-relaxed">
-                      Set customizable timers based on substance type. Automatic alerts sent to emergency contacts if user becomes unresponsive.
-                    </p>
-                  </div>
-                  
-                  {/* Phone Mockup */}
-                  <div className="w-[240px] md:w-[320px] h-[480px] md:h-[660px] relative transform transition-all scale-90 duration-700 group-hover:translate-x-4 group-hover:rotate-6">
-                    <div className="absolute inset-0 bg-[#F75590] rounded-[45px] md:rounded-[55px] p-4 shadow-xl">
-                      {/* Dynamic Island */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[95px] md:w-[126px] h-[26px] md:h-[35px] bg-[#F75590] rounded-b-[18px] md:rounded-b-[24px] flex items-center justify-center">
-                        <div className="w-[68px] md:w-[90px] h-[18px] md:h-[24px] bg-black rounded-[15px] md:rounded-[20px] flex items-center">
-                          {/* Camera */}
-                          <div className="w-[9px] md:w-[12px] h-[9px] md:h-[12px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          {/* FaceID Sensors */}
-                          <div className="w-[6px] md:w-[8px] h-[6px] md:h-[8px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[30px] md:w-[40px] h-[3px] md:h-[4px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                        </div>
-                      </div>
+            {/* Section Title */}
+            <div className="col-span-full flex items-center gap-4 mb-12">
+              <div 
+                className="w-[5vh] md:w-[9vh] h-[2px]"
+                style={{
+                  background: 'linear-gradient(to right, #493B32, #F75590)'
+                }}
+              ></div>
+              <h2 className="text-3xl md:text-5xl font-tan text-[#493B32]">
+                What I Do
+              </h2>
+            </div>
 
-                      {/* Action Button */}
-                      <div className="absolute top-[83px] md:top-[110px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      
-                      {/* Volume Buttons */}
-                      <div className="absolute top-[143px] md:top-[190px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[180px] md:top-[240px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-
-                      {/* Power Button */}
-                      <div className="absolute top-[98px] md:top-[130px] -right-[2px] w-[3px] md:w-[4px] h-[38px] md:h-[50px] bg-[#2a2a2a] rounded-r-full"></div>
-
-                      {/* Screen */}
-                      <div className="w-full h-full bg-white rounded-[38px] md:rounded-[48px] overflow-hidden">
-                        <img 
-                          src={TimerImage} 
-                          alt="Guardian App Interface" 
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
-                  </div>
+            {/* Goal cards */}
+            <div className="group relative">
+              <div 
+                className="absolute inset-0 transform skew-y-0 -rotate-3 rounded-2xl transition-transform group-hover:-rotate-1"
+                style={{
+                  background: 'linear-gradient(to right, rgba(73, 59, 50, 0.05), rgba(73, 59, 50, 0.1))'
+                }}
+              ></div>
+              <div 
+                className="relative p-6 rounded-xl border border-[#493B32]/10 shadow-sm transform transition-transform group-hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(to bottom right, white, #FFF7F2)'
+                }}
+              >
+                <div className="w-12 h-12 mb-4 rounded-full bg-[#493B32]/10 flex items-center justify-center">
+                  <IoLockClosedOutline className="w-6 h-6 text-[#493B32]" />
                 </div>
-
-                {/* Custom Contacts Feature */}
-                <div className="w-[90vw] md:w-[800px] bg-white rounded-2xl p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 items-center group hover:bg-[#493B32] transition-all duration-500">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 md:w-16 h-12 md:h-16 rounded-xl bg-[#493B32]/10 group-hover:bg-white/10 flex items-center justify-center transition-all duration-500">
-                        <span className="text-2xl md:text-3xl font-bold text-[#493B32] group-hover:text-white">2</span>
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-medium text-[#493B32] group-hover:text-white">Custom Contacts</h3>
-                    </div>
-                    <p className="text-[#493B32]/80 group-hover:text-white/90 text-base md:text-lg leading-relaxed">
-                      Add and manage trusted emergency contacts. Choose who gets notified and when.
-                    </p>
-                  </div>
-                  
-                  <div className="w-[240px] md:w-[320px] h-[480px] md:h-[660px] relative transform transition-all scale-90 duration-700 group-hover:translate-x-4 group-hover:rotate-6">
-                    <div className="absolute inset-0 bg-[#F75590] rounded-[45px] md:rounded-[55px] p-4 shadow-xl">
-                      {/* Dynamic Island */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[95px] md:w-[126px] h-[26px] md:h-[35px] bg-[#F75590] rounded-b-[18px] md:rounded-b-[24px] flex items-center justify-center">
-                        <div className="w-[68px] md:w-[90px] h-[18px] md:h-[24px] bg-black rounded-[15px] md:rounded-[20px] flex items-center">
-                          <div className="w-[9px] md:w-[12px] h-[9px] md:h-[12px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[6px] md:w-[8px] h-[6px] md:h-[8px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[30px] md:w-[40px] h-[3px] md:h-[4px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                        </div>
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="absolute top-[83px] md:top-[110px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[143px] md:top-[190px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[180px] md:top-[240px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[98px] md:top-[130px] -right-[2px] w-[3px] md:w-[4px] h-[38px] md:h-[50px] bg-[#2a2a2a] rounded-r-full"></div>
-
-                      {/* Screen */}
-                      <div className="w-full h-full bg-white rounded-[38px] md:rounded-[48px] overflow-hidden">
-                        <img 
-                          src={ContactImage} 
-                          alt="Contacts Interface" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Live Alerts Feed Feature */}
-                <div className="w-[90vw] md:w-[800px] bg-white rounded-2xl p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 items-center group hover:bg-[#493B32] transition-all duration-500">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 md:w-16 h-12 md:h-16 rounded-xl bg-[#493B32]/10 group-hover:bg-white/10 flex items-center justify-center transition-all duration-500">
-                        <span className="text-2xl md:text-3xl font-bold text-[#493B32] group-hover:text-white">3</span>
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-medium text-[#493B32] group-hover:text-white">Live Alerts Feed</h3>
-                    </div>
-                    <p className="text-[#493B32]/80 group-hover:text-white/90 text-base md:text-lg leading-relaxed">
-                      Real-time drug contamination alerts from Vancouver Coastal Health, prioritized by severity level.
-                    </p>
-                  </div>
-                  
-                  <div className="w-[240px] md:w-[320px] h-[480px] md:h-[660px] relative transform transition-all scale-90 duration-700 group-hover:translate-x-4 group-hover:rotate-6">
-                    <div className="absolute inset-0 bg-[#F75590] rounded-[45px] md:rounded-[55px] p-4 shadow-xl">
-                      {/* Dynamic Island */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[95px] md:w-[126px] h-[26px] md:h-[35px] bg-[#F75590] rounded-b-[18px] md:rounded-b-[24px] flex items-center justify-center">
-                        <div className="w-[68px] md:w-[90px] h-[18px] md:h-[24px] bg-black rounded-[15px] md:rounded-[20px] flex items-center">
-                          <div className="w-[9px] md:w-[12px] h-[9px] md:h-[12px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[6px] md:w-[8px] h-[6px] md:h-[8px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[30px] md:w-[40px] h-[3px] md:h-[4px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                        </div>
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="absolute top-[83px] md:top-[110px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[143px] md:top-[190px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[180px] md:top-[240px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[98px] md:top-[130px] -right-[2px] w-[3px] md:w-[4px] h-[38px] md:h-[50px] bg-[#2a2a2a] rounded-r-full"></div>
-
-                      {/* Screen */}
-                      <div className="w-full h-full bg-white rounded-[38px] md:rounded-[48px] overflow-hidden">
-                        <img 
-                          src={DrugAlertImage} 
-                          alt="Alerts Interface" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Resource Hub Feature */}
-                <div className="w-[90vw] md:w-[800px] bg-white rounded-2xl p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 items-center group hover:bg-[#493B32] transition-all duration-500">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 md:w-16 h-12 md:h-16 rounded-xl bg-[#493B32]/10 group-hover:bg-white/10 flex items-center justify-center transition-all duration-500">
-                        <span className="text-2xl md:text-3xl font-bold text-[#493B32] group-hover:text-white">4</span>
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-medium text-[#493B32] group-hover:text-white">Resource Hub</h3>
-                    </div>
-                    <p className="text-[#493B32]/80 group-hover:text-white/90 text-base md:text-lg leading-relaxed">
-                      Access harm reduction guides, naloxone training resources, and mental health support services.
-                    </p>
-                  </div>
-                  
-                  <div className="w-[240px] md:w-[320px] h-[480px] md:h-[660px] relative transform transition-all scale-90 duration-700 group-hover:translate-x-4 group-hover:rotate-6">
-                    <div className="absolute inset-0 bg-[#F75590] rounded-[45px] md:rounded-[55px] p-4 shadow-xl">
-                      {/* Dynamic Island */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[95px] md:w-[126px] h-[26px] md:h-[35px] bg-[#F75590] rounded-b-[18px] md:rounded-b-[24px] flex items-center justify-center">
-                        <div className="w-[68px] md:w-[90px] h-[18px] md:h-[24px] bg-black rounded-[15px] md:rounded-[20px] flex items-center">
-                          <div className="w-[9px] md:w-[12px] h-[9px] md:h-[12px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[6px] md:w-[8px] h-[6px] md:h-[8px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[30px] md:w-[40px] h-[3px] md:h-[4px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                        </div>
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="absolute top-[83px] md:top-[110px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[143px] md:top-[190px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[180px] md:top-[240px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[98px] md:top-[130px] -right-[2px] w-[3px] md:w-[4px] h-[38px] md:h-[50px] bg-[#2a2a2a] rounded-r-full"></div>
-
-                      {/* Screen */}
-                      <div className="w-full h-full bg-white rounded-[38px] md:rounded-[48px] overflow-hidden">
-                        <img 
-                          src={ResourceHubImage} 
-                          alt="Resources Interface" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Anonymous Mode Feature */}
-                <div className="w-[90vw] md:w-[800px] bg-white rounded-2xl p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 items-center group hover:bg-[#493B32] transition-all duration-500">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 md:w-16 h-12 md:h-16 rounded-xl bg-[#493B32]/10 group-hover:bg-white/10 flex items-center justify-center transition-all duration-500">
-                        <span className="text-2xl md:text-3xl font-bold text-[#493B32] group-hover:text-white">5</span>
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-medium text-[#493B32] group-hover:text-white">Anonymous Mode</h3>
-                    </div>
-                    <p className="text-[#493B32]/80 group-hover:text-white/90 text-base md:text-lg leading-relaxed">
-                      Use the app without registration. Privacy-first approach with no personal data stored.
-                    </p>
-                  </div>
-                  
-                  <div className="w-[240px] md:w-[320px] h-[480px] md:h-[660px] relative transform transition-all scale-90 duration-700 group-hover:translate-x-4 group-hover:rotate-6">
-                    <div className="absolute inset-0 bg-[#F75590] rounded-[45px] md:rounded-[55px] p-4 shadow-xl">
-                      {/* Dynamic Island */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[95px] md:w-[126px] h-[26px] md:h-[35px] bg-[#F75590] rounded-b-[18px] md:rounded-b-[24px] flex items-center justify-center">
-                        <div className="w-[68px] md:w-[90px] h-[18px] md:h-[24px] bg-black rounded-[15px] md:rounded-[20px] flex items-center">
-                          <div className="w-[9px] md:w-[12px] h-[9px] md:h-[12px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[6px] md:w-[8px] h-[6px] md:h-[8px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                          <div className="w-[30px] md:w-[40px] h-[3px] md:h-[4px] rounded-full bg-[#1a1a1a] ml-2"></div>
-                        </div>
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="absolute top-[83px] md:top-[110px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[143px] md:top-[190px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[180px] md:top-[240px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
-                      <div className="absolute top-[98px] md:top-[130px] -right-[2px] w-[3px] md:w-[4px] h-[38px] md:h-[50px] bg-[#2a2a2a] rounded-r-full"></div>
-
-                      {/* Screen */}
-                      <div className="w-full h-full bg-white rounded-[38px] md:rounded-[48px] overflow-hidden">
-                        <img 
-                          src={WelcomeImage} 
-                          alt="Anonymous Mode Interface" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-[#493B32] font-medium leading-relaxed">
+                  Offer a judgment-free, anonymous experience
+                </p>
               </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="flex justify-center mt-8 gap-2">
-              <div className="w-8 md:w-12 h-1 bg-[#493B32] rounded-full"></div>
-              <div className="w-8 md:w-12 h-1 bg-[#493B32]/20 rounded-full"></div>
-              <div className="w-8 md:w-12 h-1 bg-[#493B32]/20 rounded-full"></div>
-              <div className="w-8 md:w-12 h-1 bg-[#493B32]/20 rounded-full"></div>
-              <div className="w-8 md:w-12 h-1 bg-[#493B32]/20 rounded-full"></div>
+            {/* Goal cards */}
+            <div className="group relative">
+              <div 
+                className="absolute inset-0 transform skew-y-0 -rotate-3 rounded-2xl transition-transform group-hover:-rotate-1"
+                style={{
+                  background: 'linear-gradient(to right, rgba(73, 59, 50, 0.05), rgba(73, 59, 50, 0.1))'
+                }}
+              ></div>
+              <div 
+                className="relative p-6 rounded-xl border border-[#493B32]/10 shadow-sm transform transition-transform group-hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(to bottom right, white, #FFF7F2)'
+                }}
+              >
+                <div className="w-12 h-12 mb-4 rounded-full bg-[#493B32]/10 flex items-center justify-center">
+                  <IoAlertOutline className="w-6 h-6 text-[#493B32]" />
+                </div>
+                <p className="text-[#493B32] font-medium leading-relaxed">
+                  Enable real-time safety monitoring and emergency alerts
+                </p>
+              </div>
+            </div>
+
+            {/* Goal cards */}
+            <div className="group relative">
+              <div 
+                className="absolute inset-0 transform skew-y-0 -rotate-3 rounded-2xl transition-transform group-hover:-rotate-1"
+                style={{
+                  background: 'linear-gradient(to right, rgba(73, 59, 50, 0.05), rgba(73, 59, 50, 0.1))'
+                }}
+              ></div>
+              <div 
+                className="relative p-6 rounded-xl border border-[#493B32]/10 shadow-sm transform transition-transform group-hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(to bottom right, white, #FFF7F2)'
+                }}
+              >
+                <div className="w-12 h-12 mb-4 rounded-full bg-[#493B32]/10 flex items-center justify-center">
+                  <IoLocationOutline className="w-6 h-6 text-[#493B32]" />
+                </div>
+                <p className="text-[#493B32] font-medium leading-relaxed">
+                  Provide localized, up-to-date drug alerts and resources
+                </p>
+              </div>
+            </div>
+
+            {/* Goal cards */}
+            <div className="group relative">
+              <div 
+                className="absolute inset-0 transform skew-y-0 -rotate-3 rounded-2xl transition-transform group-hover:-rotate-1"
+                style={{
+                  background: 'linear-gradient(to right, rgba(73, 59, 50, 0.05), rgba(73, 59, 50, 0.1))'
+                }}
+              ></div>
+              <div 
+                className="relative p-6 rounded-xl border border-[#493B32]/10 shadow-sm transform transition-transform group-hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(to bottom right, white, #FFF7F2)'
+                }}
+              >
+                <div className="w-12 h-12 mb-4 rounded-full bg-[#493B32]/10 flex items-center justify-center">
+                  <IoHeartOutline className="w-6 h-6 text-[#493B32]" />
+                </div>
+                <p className="text-[#493B32] font-medium leading-relaxed">
+                  Maintain a calm, emotionally supportive interface
+                </p>
+              </div>
             </div>
           </div>
         </section>

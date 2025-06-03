@@ -16,8 +16,18 @@ const CategoryCard = ({
       {/* Icon Container */}
       <div className="relative p-8 md:p-10 flex flex-col items-center text-center">
         <div className="relative mb-6">
-          <div className={`absolute inset-0 bg-gradient-to-r from-[${gradientFrom}]/20 to-[${gradientTo}]/20 rounded-full blur-xl`}></div>
-          <div className={`relative bg-gradient-to-r from-[${gradientFrom}] to-[${gradientTo}] p-6 rounded-full`}>
+          <div 
+            className="absolute inset-0 rounded-full blur-xl"
+            style={{
+              background: `linear-gradient(to right, ${gradientFrom}33, ${gradientTo}33)`
+            }}
+          ></div>
+          <div 
+            className="relative p-6 rounded-full"
+            style={{
+              background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`
+            }}
+          >
             <Icon size={iconSize} className="text-white" />
           </div>
         </div>
@@ -32,7 +42,10 @@ const CategoryCard = ({
         
         <Link 
           to={buttonHref}
-          className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-[${gradientFrom}] to-[${gradientTo}] text-white rounded-full font-medium transition-all duration-300 hover:opacity-90 hover:shadow-lg group`}
+          className="inline-flex items-center px-6 py-3 text-white rounded-full font-medium transition-all duration-300 hover:opacity-90 hover:shadow-lg group"
+          style={{
+            background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`
+          }}
         >
           {buttonText}
           <svg
@@ -51,8 +64,18 @@ const CategoryCard = ({
         </Link>
         
         {/* Decorative elements */}
-        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-tr from-[${gradientFrom}]/10 to-transparent rounded-full blur-2xl`}></div>
-        <div className={`absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-[${gradientTo}]/10 to-transparent rounded-full blur-2xl`}></div>
+        <div 
+          className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-2xl"
+          style={{
+            background: `linear-gradient(to top right, ${gradientFrom}10, transparent)`
+          }}
+        ></div>
+        <div 
+          className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full blur-2xl"
+          style={{
+            background: `linear-gradient(to bottom right, ${gradientTo}10, transparent)`
+          }}
+        ></div>
       </div>
     </div>
   );

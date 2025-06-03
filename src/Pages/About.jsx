@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import {
@@ -32,6 +30,7 @@ import Value from "../Components/Value";
 import GlassIcon from "../Components/GlassIcon";
 import NeginImage1 from "../assets/profile-about.png";
 import styles from "../Components/Scroll.module.css";
+import Button from '../Components/Button';
 
 const About = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -123,15 +122,13 @@ const About = () => {
 
         {/* Resume button section */}
         <section className="pl-22 lg:pl-0 pr-10 lg:pr-0 pt-8 sm:pt-10">
-          <a
+          <Button 
             href="/assets/resume/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#F75590] hover:bg-[#F75590]/90 text-white rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+            variant="primary"
+            showArrow={true}
           >
-            <span>View My Resume</span>
-            <HiOutlineExternalLink className="h-5 w-5" />
-          </a>
+            View My Resume
+          </Button>
         </section>
 
         {/* glass icons of the softwares I know */}
@@ -192,22 +189,6 @@ const About = () => {
             </div>
           </AccordionSection>
         </section>
-
-        {/* Back to Projects Link */}
-        <div className="flex justify-end items-center py-8 sm:py-12 lg:py-16 border-t border-[#493b32]/20">
-
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="p-2 hover:opacity-80 transition-opacity"
-            aria-label="Scroll to top"
-          >
-            <IoIosArrowDropupCircle
-              size={28}
-              color="#493B32"
-              className="sm:w-8 sm:h-8 md:w-10 md:h-10"
-            />
-          </button>
-        </div>
       </div>
     </main>
   );

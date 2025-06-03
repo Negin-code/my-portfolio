@@ -3,9 +3,9 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BiCodeAlt, BiPalette } from "react-icons/bi";
 
-import Button from '../components/Button';
-import AnimatedThreads from '../components/AnimatedThreads';
-import CategoryCard from '../components/CategoryCard';
+import Button from '../Components/Button';
+import AnimatedThreads from '../Components/AnimatedThreads';
+import CategoryCard from '../Components/CategoryCard';
 
 const Home = () => {
   return (
@@ -53,11 +53,25 @@ const Home = () => {
         <div className="col-span-4 md:col-span-6 lg:col-span-11 text-right mt-10 md:mt-15 px-6 md:px-10 lg:px-0">
           
           <h1 className="font-tan text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] mb-6">
-            <span className="block bg-gradient-to-r from-[#493B32] to-[#F75590] bg-clip-text text-transparent">
+            <span 
+              className="block text-transparent"
+              style={{
+                background: 'linear-gradient(to right, #493B32, #F75590)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text'
+              }}
+            >
               UI/UX Designer
             </span>
             <span className="block text-[#493B32] mt-2">&</span>
-            <span className="block bg-gradient-to-r from-[#493B32] to-[#F75590] bg-clip-text text-transparent">
+            <span 
+              className="block text-transparent"
+              style={{
+                background: 'linear-gradient(to right, #493B32, #F75590)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text'
+              }}
+            >
               Frontend Developer
             </span>
           </h1>
@@ -73,9 +87,10 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-end gap-4 sm:gap-6 mt-10">
             <Button 
-              href="#portfolio" 
+              href="/assets/resume/resume.pdf"
               variant="primary"
               className="w-full sm:w-auto text-center"
+              showArrow={true}
             >
               View My Resume
             </Button>
@@ -99,7 +114,12 @@ const Home = () => {
         <section className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 col-span-full py-20 px-6 md:px-10 lg:px-20 bg-[#FFF7F2]">
           {/* Section Title */}
           <div className="col-span-full flex items-center gap-4 mb-12">
-            <div className="w-[5vh] md:w-[9vh] h-[2px] bg-gradient-to-r from-[#493B32] to-[#F75590]"></div>
+            <div 
+              className="w-[5vh] md:w-[9vh] h-[2px]"
+              style={{
+                background: 'linear-gradient(to right, #493B32, #F75590)'
+              }}
+            ></div>
             <h2 className="text-3xl md:text-5xl font-tan text-[#493B32]">
               What I Do
             </h2>
