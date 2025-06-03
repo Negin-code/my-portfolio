@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Federo&family=Italiana&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 
@@ -33,29 +32,28 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 /* h1 {
   font-size: 11rem;
 } */
 
+/* Remove default button styles */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button:focus {
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -72,3 +70,52 @@ button:focus-visible {
 }
 
 /* Custom styles can be added below */
+
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Animation delay utilities for threads */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-1100 {
+  animation-delay: 1100ms;
+}

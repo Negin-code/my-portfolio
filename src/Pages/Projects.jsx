@@ -1,240 +1,142 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { IoIosArrowRoundBack } from "react-icons/io";
-import { IoIosArrowDropupCircle } from "react-icons/io";
+import { useOutletContext, useSearchParams } from "react-router-dom";
+import { BiPalette, BiCodeAlt } from "react-icons/bi";
+import { HiOutlineViewGrid } from "react-icons/hi";
 import CrimsonPlateImage from "../assets/CrimsonPlate.png";
 import AlzcareImage from "../assets/Alzcare.svg";
 import ListeningLabImage from "../assets/LLCover.png";
 import CultureCafeImage from "../assets/CCCover.png";
+import GuardianImage from "../assets/Guardiancard.svg";
 
-
-
+import ChromaGridCard from "../components/ChromaGridCard";
+import "./Projects.css";
 
 const Projects = () => {
+  const [searchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get('category');
+  const { selectedCategory = categoryFromUrl || "all" } = useOutletContext() || {};
+  
+  const projects = [
+    {
+      image: CrimsonPlateImage,
+      imageAlt: "Crimson Plate Website",
+      category: "Front-end",
+      categoryType: "coding",
+      title: "Crimson Plate Website",
+      description: "The goal was to create a responsive, visually engaging, and user-friendly restaurant website that delivers an intuitive, interactive digital experience while accurately reflecting the restaurant's brand, ensuring seamless navigation, performance, and accessibility.",
+      technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+      projectLink: "/projects/crimson-plate#top",
+      gradientFrom: "#F75590",
+      gradientTo: "#FF6B6B"
+    },
+    {
+      image: AlzcareImage,
+      imageAlt: "AlzCare App Design",
+      category: "UI/UX Design",
+      categoryType: "design",
+      title: "AlzCare App",
+      description: "The goal of AlzCare is to create a user-friendly mobile app that integrates with a smart medication container, helping caregivers monitor medication adherence for individuals with Alzheimer's.",
+      technologies: ["Figma", "Illustrator"],
+      projectLink: "/projects/alzcare#top",
+      gradientFrom: "#493B32",
+      gradientTo: "#7B6F63"
+    },
+    {
+      image: ListeningLabImage,
+      imageAlt: "Listening Lab Service Design",
+      category: "Service Design",
+      categoryType: "design",
+      title: "Listening Lab",
+      description: "The goal of the Listening Lab was to enhance the effectiveness of listening practices within the immigrant services sector by fostering trust, cultural understanding, and empathy.",
+      technologies: ["Zoom", "Miro", "Canva"],
+      projectLink: "/projects/listening-lab#top",
+      gradientFrom: "#FF6B6B",
+      gradientTo: "#F75590"
+    },
+    {
+      image: CultureCafeImage,
+      imageAlt: "Culture Cafe",
+      category: "UI/UX Design",
+      categoryType: "design",
+      title: "Culture Cafe",
+      description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",
+      technologies: ["Figma", "Research", "Prototyping"],
+      projectLink: "/projects/culture-cafe#top",
+      gradientFrom: "#7B6F63",
+      gradientTo: "#493B32"
+    },
+    {
+      image: GuardianImage,
+      imageAlt: "Portfolio Website",
+      category: "Front-end",
+      categoryType: "coding",
+      title: "Portfolio Redesign",
+      description: "A modern, responsive portfolio website showcasing design and development projects with interactive elements.",
+      technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      projectLink: "/projects/guardian#top",
+      gradientFrom: "#F75590",
+      gradientTo: "#FF8C94"
+    },
+    {
+      image: AlzcareImage,
+      imageAlt: "Mobile App Concept",
+      category: "Product Design",
+      categoryType: "design",
+      title: "Wellness Tracker",
+      description: "A comprehensive wellness tracking application designed to help users maintain healthy habits and routines.",
+      technologies: ["Figma", "User Research", "Prototyping"],
+      projectLink: "/projects/wellness#top",
+      gradientFrom: "#FF8C94",
+      gradientTo: "#F75590"
+    }
+  ];
+
+  const filteredProjects = selectedCategory === "all" 
+    ? projects 
+    : projects.filter(project => project.categoryType === selectedCategory);
+
+  const navItems = [
+    { id: "all", icon: HiOutlineViewGrid, label: "All Projects" },
+    { id: "design", icon: BiPalette, label: "UX/UI Design" },
+    { id: "coding", icon: BiCodeAlt, label: "Development" }
+  ];
+
   return (
-    <main className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 min-h-screen bg-[#FFF7F2] pt-20 lg:pt-50 lg:px-0 md:px-8 relative overflow-hidden">
+    <main className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 min-h-screen bg-[#FFF7F2] pt-30 sm:pt-40 lg:pt-50 lg:px-0 md:px-8 relative overflow-hidden">
       {/* Left vertical line */}
-      <div className="absolute left-17 md:left-20 top-0 bottom-8 h-[calc(100%-5rem)] w-[2px] bg-[#493b32]"></div>
+      <div className="absolute left-16 md:left-20 top-0 h-[calc(100%-5rem)] w-[2px] bg-[#493b32]"></div>
 
       {/* Right border line */}
       <div className="absolute right-10 top-0 bottom-8 h-[calc(100%-5rem)] w-[2px] bg-[#493b32]"></div>
 
-      {/* Projects Title */}
-      <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-span-10 lg:col-start-2 flex flex-row items-start justify-start gap-1 mt-20 lg:mt-0 mb-0 pl-25">
-        <div className="w-[5vh] sm:w-[5vh] md:w-[7vh] h-[2px] bg-[#493B32] mt-2 lg:mt-4"></div>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-tan text-[#493B32] pb-4">
-          Projects
-        </h1>
-      </div>
-     
-      {/* Front End Section */}
-      <section className="col-span-4 sm:col-span-4 sm:col-start-1 md:col-span-6 md:col-start-1 lg:col-span-10 lg:col-start-2 col-start-1 mb-12 pl-10 sm:pl-20 mt-0 mr-12 sm:mr-0">
-        {/* Project 1 - Image on left, content on right */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-12 lg:gap-4 mb-20">
-          <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-span-7 lg:mt-4 order-1 md:order-1">
-            <img
-              src={CrimsonPlateImage}
-              alt="Crimson Plate Website"
-              className="w-full object-cover scale-80 md:scale-90 lg:scale-80 mx-5"
-            />
-          </div>
-          <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-start-9 lg:col-span-4 mt-5 md:mt-20 order-6 md:order-2 ml-10 lg:ml-0">
-            <span className="bg-[#5E3F27] text-[#FFF7F2] text-md sm:text-lg font-medium rounded-sm px-4 py-1 mb-4 w-fit flex justify-start items-start">
-              Front-end
-            </span>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <h3 className="text-md sm:text-xl font-semibold text-[#493B32]">
-              Crimson Plate Website
-            </h3>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <p className="text-[#493B32] text-base sm:text-lg leading-relaxed">
-              The goal was to create a responsive, visually engaging, and
-              user-friendly restaurant website that delivers an intuitive,
-              interactive digital experience while accurately reflecting the
-              restaurant's brand, ensuring seamless navigation, performance, and
-              accessibility.
-            </p>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <div className="flex flex-wrap gap-2 mt-4 text-[#493B32]">
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                HTML
-              </span>
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Tailwind CSS
-              </span>
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                JavaScript
-              </span>
-            </div>
-            <div className="w-full h-[1px] bg-[#493B32] mt-[15px]"></div>
-            
-            {/* View Project Button */}
-            <Link
-              to="/projects/crimson-plate#top"
-              className="inline-block w-full text-center mt-6 lg:mt-8 py-2 px-4 bg-[#5E3F27] hover:bg-[#493B32] text-[#FFF7F2] font-semibold rounded-sm transition duration-300"
-            >
-              View Project
-            </Link>
-          </div>
+      {/* Project Content Container */}
+      <div className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-1 md:col-span-6 lg:col-span-10 lg:col-start-2 pl-20 pr-15 sm:pr-15 lg:pl-0 lg:pr-0">
+        {/* Project Title */}
+        <div className="flex flex-row items-start justify-start gap-1 mb-8">
+          <div className="w-[4vh] sm:w-[5vh] md:w-[7vh] h-[3px] bg-gradient-to-r from-[#493B32] to-[#F75590] mt-4"></div>
+          <h1 id="top" className="text-2xl sm:text-5xl font-tan text-[#493B32]">
+            My Projects
+          </h1>
         </div>
 
-        {/* Project 2 - Content on left, image on right (reversed on mobile) */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-12 lg:gap-4 mb-20">
-          <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-span-7 lg:mt-4 lg:col-start-1 lg:col-span-4 mt-10 md:mt-20 order-4 md:order-1 ml-10 lg:ml-0">
-            <span className="bg-[#5E3F27] text-[#FFF7F2] text-md sm:text-lg font-medium rounded-sm px-4 py-1 mb-4 w-fit flex justify-start items-start">
-              UX/UI Design
-            </span>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <h3 className="text-md sm:text-xl font-semibold text-[#493B32]">
-              AlzCare App
-            </h3>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <p className="text-[#493B32] text-base sm:text-lg leading-relaxed">
-              The goal of AlzCare is to create a user-friendly mobile app 
-              that integrates with a smart medication container, helping 
-              caregivers monitor medication adherence for individuals 
-              with Alzheimer's.
-            </p>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <div className="flex flex-wrap gap-2 mt-4 text-[#493B32]">
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Figma
-              </span>
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Illustrator
-              </span>
-            </div>
-            <div className="w-full h-[1px] bg-[#493B32] mt-[15px]"></div>
-            
-            {/* View Project Button */}
-            <Link
-              to="/projects/alzcare#top"
-              className="inline-block w-full text-center mt-6 lg:mt-8 py-2 px-4 bg-[#5E3F27] hover:bg-[#493B32] text-[#FFF7F2] font-semibold rounded-sm transition duration-300"
-            >
-              View Project
-            </Link>
-          </div>
-          <div className="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-4 lg:col-start-9 lg:mt-10 order-1 lg:order-2">
-            <img
-              src={AlzcareImage}
-              alt="AlzCare App"
-              className="w-full object-cover lg:scale-100 scale-90"
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-20 mx-auto max-w-7xl">
+          {filteredProjects.map((project, index) => (
+            <ChromaGridCard
+              key={index}
+              {...project}
+              index={index}
             />
-          </div>
+          ))}
         </div>
+        
+        {/* Empty State */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-20">
+            <p className="text-[#493B32]/60 text-lg">No projects found in this category.</p>
+          </div>
+        )}
 
-        {/* Project 3 - Image on left, content on right */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-12 lg:gap-4 mb-20">
-          <div className="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-7 lg:mt-4 order-5 md:order-1">
-            <img
-              src={ListeningLabImage}
-              alt="Listening Lab"
-              className="w-full object-cover scale-80 mx-5"
-            />
-          </div>
-          <div className="col-span-4 sm:col-span-4 md:col-span-4 lg:col-start-9 lg:col-span-4 mt-10 md:mt-20 order-6 md:order-2 ml-10 lg:ml-0">
-            <span className="bg-[#5E3F27] text-[#FFF7F2] text-md sm:text-lg font-medium rounded-sm px-4 py-1 mb-4 w-fit flex justify-start items-start">
-              Service Design
-            </span>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <h3 className="text-md sm:text-xl font-semibold text-[#493B32]">
-              Listening Lab
-            </h3>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <p className="text-[#493B32] text-base sm:text-lg leading-relaxed">
-              The goal of the Listening Lab was to 
-              enhance the effectiveness of listening 
-              practices within the immigrant services 
-              sector by fostering trust, cultural 
-              understanding, and empathy.
-            </p>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <div className="flex flex-wrap gap-2 mt-4 text-[#493B32]">
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Zoom
-              </span>
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Miro
-              </span>
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Canva
-              </span>
-            </div>
-            <div className="w-full h-[1px] bg-[#493B32] mt-[15px]"></div>
-            
-            {/* View Project Button */}
-            <Link
-              to="/projects/listening-lab#top"
-              className="inline-block w-full text-center mt-6 lg:mt-8 py-2 px-4 bg-[#5E3F27] hover:bg-[#493B32] text-[#FFF7F2] font-semibold rounded-sm transition duration-300"
-            >
-              View Project
-            </Link>
-          </div>
-        </div>
-
-        {/* Project 4 - Content on left, image on right (reversed on mobile) */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-12 lg:gap-4">
-          <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-span-7 lg:mt-4 lg:col-start-1 lg:col-span-4 mt-10 md:mt-20 order-8 md:order-1 ml-10 lg:ml-0">
-            <span className="bg-[#5E3F27] text-[#FFF7F2] text-md sm:text-lg font-medium rounded-sm px-4 py-1 mb-4 w-fit flex justify-start items-start">
-              Service Design
-            </span>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <h3 className="text-md sm:text-xl font-semibold text-[#493B32]">
-              Evaluating Culture Café Program
-            </h3>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <p className="text-[#493B32] text-base sm:text-lg leading-relaxed">
-              The goal was to evaluate the Culture Café program, identify areas for 
-              improvement, and propose actionable solutions to 
-              enhance participants' experience. The evaluation focused 
-              on understanding participants' experiences.
-            </p>
-            <div className="w-full h-[1px] bg-[#493B32] mb-[10px] mt-[10px]"></div>
-            <div className="flex flex-wrap gap-2 mt-4 text-[#493B32]">
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Miro
-              </span>
-              <span className="border border-[#493B32] px-3 py-1 text-base">
-                Canva
-              </span>
-            </div>
-            <div className="w-full h-[1px] bg-[#493B32] mt-[15px]"></div>
-            
-            {/* View Project Button */}
-            <Link
-              to="/projects/culture-cafe#top"
-              className="inline-block w-full text-center mt-6 lg:mt-8 py-2 px-4 bg-[#5E3F27] hover:bg-[#493B32] text-[#FFF7F2] font-semibold rounded-sm transition duration-300"
-            >
-              View Project
-            </Link>
-          </div>
-          <div className="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-4 lg:col-start-9 lg:mt-0 order-7 md:order-2 ">
-            <img
-              src={CultureCafeImage}
-              alt="Culture Café Program"
-              className="w-full object-cover lg:scale-120 scale-85 mx-5 lg:mt-20"
-            />
-          </div>
-        </div>
-      </section>
-
-     {/* Back to Projects Link */}
-     <div className="col-span-full grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4">
-        <div className="col-span-3 col-start-1 md:col-span-6 md:col-start-1 lg:col-span-10 lg:col-start-2 flex justify-between items-center mt-8">
-          <div className="flex items-center gap-2 mx-20 lg:mx-10 lg:my-20 lg:mb-20">
-            <IoIosArrowRoundBack size={48} color="#493B32" className="my-4" />
-            <p className="font-open font-semibold text-xl lg:text-2xl text-[#493B32]">Resume</p>
-          </div>
-          <div className="mx-0 sm:mx-20 my-10 mb-10 md:mx-20 lg:mx-10 lg:my-20 lg:mb-20">
-            <IoIosArrowDropupCircle
-              size={32}
-              color="#493B32"
-              className="cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-              aria-label="Scroll to top"
-            />
-          </div>
-        </div>
       </div>
     </main>
   );

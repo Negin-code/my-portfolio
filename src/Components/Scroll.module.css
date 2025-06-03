@@ -1,0 +1,29 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-120px * 18));
+  }
+}
+
+.scrollContainer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.scrollTrack {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 25s linear infinite;
+}
+
+.scrollTrack:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  flex: 0 0 120px;
+  padding: 0 1rem;
+} 

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { FiMenu } from "react-icons/fi";
-
 import logo from "../assets/Logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const handleStateChange = (state) => {
     setIsMenuOpen(state.isOpen);
@@ -15,7 +15,6 @@ const Header = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-
 
   return (
     <header className="w-full bg-[#FFF7F2] py-4 px-6 fixed top-0 left-0 z-50">
@@ -31,28 +30,24 @@ const Header = () => {
 
         {/* Desktop Navigation - Only visible on lg screens and up */}
         <nav className="hidden lg:flex justify-center space-x-15 w-full">
-          
-        <Link
-              to="/"
-                className="text-[#5a3e2b] text-lg hover:text-[#3e2a1e] transition duration-300"
-              >
-                Home
-              </Link>
-              
-              <Link
-                to="/projects"
-                className="text-[#5a3e2b] text-lg hover:text-[#3e2a1e] transition duration-300"
-              >
-                Projects
-              </Link>
-              <Link
-                to="/about"
-                className="text-[#5a3e2b] text-lg hover:text-[#3e2a1e] transition duration-300"
-              >
-                About Me
-              </Link>
-           
-          
+          <Link
+            to="/"
+            className="text-[#5a3e2b] text-lg hover:text-[#3e2a1e] transition duration-300"
+          >
+            Home
+          </Link>
+          <Link
+            to="/projects"
+            className="text-[#5a3e2b] text-lg hover:text-[#3e2a1e] transition duration-300"
+          >
+            Projects
+          </Link>
+          <Link
+            to="/about"
+            className="text-[#5a3e2b] text-lg hover:text-[#3e2a1e] transition duration-300"
+          >
+            About Me
+          </Link>
         </nav>
 
         {/* Mobile and Tablet Navigation - Visible on mobile and md screens */}
@@ -72,7 +67,6 @@ const Header = () => {
             <Link to="/" onClick={closeMenu} className="block text-[#5E3F27] hover:text-[#3e2a1e] text-lg transition duration-300">Home</Link>
             <Link to="/about" onClick={closeMenu} className="block text-[#5E3F27] hover:text-[#3e2a1e] text-lg transition duration-300">About Me</Link>
             <Link to="/projects" onClick={closeMenu} className="block text-[#5E3F27] hover:text-[#3e2a1e] text-lg transition duration-300">Projects</Link>
-
           </Menu>
         </div>
       </div>
