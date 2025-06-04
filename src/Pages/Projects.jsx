@@ -30,6 +30,30 @@ const Projects = () => {
       gradientTo: "#FF6B6B"
     },
     {
+      image: GuardianImage,
+      imageAlt: "Overdose Prevention App",
+      category: "Front-end",
+      categoryType: "coding",
+      title: "Guardian",
+      description: "A modern, responsive portfolio website showcasing design and development projects with interactive elements.",
+      technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      projectLink: "/projects/guardian#top",
+      gradientFrom: "#F75590",
+      gradientTo: "#FF8C94"
+    },
+    {
+      image: CultureCafeImage,
+      imageAlt: "Culture Cafe",
+      category: "UI/UX Design",
+      categoryType: "design",
+      title: "Culture Cafe",
+      description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",
+      technologies: ["Figma", "Research", "Prototyping"],
+      projectLink: "/projects/culture-cafe#top",
+      gradientFrom: "#7B6F63",
+      gradientTo: "#493B32"
+    },
+    {
       image: AlzcareImage,
       imageAlt: "AlzCare App Design",
       category: "UI/UX Design",
@@ -51,42 +75,6 @@ const Projects = () => {
       technologies: ["Zoom", "Miro", "Canva"],
       projectLink: "/projects/listening-lab#top",
       gradientFrom: "#FF6B6B",
-      gradientTo: "#F75590"
-    },
-    {
-      image: CultureCafeImage,
-      imageAlt: "Culture Cafe",
-      category: "UI/UX Design",
-      categoryType: "design",
-      title: "Culture Cafe",
-      description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",
-      technologies: ["Figma", "Research", "Prototyping"],
-      projectLink: "/projects/culture-cafe#top",
-      gradientFrom: "#7B6F63",
-      gradientTo: "#493B32"
-    },
-    {
-      image: GuardianImage,
-      imageAlt: "Portfolio Website",
-      category: "Front-end",
-      categoryType: "coding",
-      title: "Portfolio Redesign",
-      description: "A modern, responsive portfolio website showcasing design and development projects with interactive elements.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      projectLink: "/projects/guardian#top",
-      gradientFrom: "#F75590",
-      gradientTo: "#FF8C94"
-    },
-    {
-      image: AlzcareImage,
-      imageAlt: "Mobile App Concept",
-      category: "Product Design",
-      categoryType: "design",
-      title: "Wellness Tracker",
-      description: "A comprehensive wellness tracking application designed to help users maintain healthy habits and routines.",
-      technologies: ["Figma", "User Research", "Prototyping"],
-      projectLink: "/projects/wellness#top",
-      gradientFrom: "#FF8C94",
       gradientTo: "#F75590"
     }
   ];
