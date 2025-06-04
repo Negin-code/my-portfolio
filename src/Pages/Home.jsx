@@ -50,9 +50,9 @@ const Home = () => {
       {/* Content container */}
     <section className="col-span-full grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2">
         {/* Title section - full width */}
-        <div className="col-span-4 md:col-span-6 lg:col-span-11 text-right mt-10 md:mt-15 px-6 md:px-10 lg:px-0">
+        <div className="col-span-4 md:col-span-6 lg:col-span-11 text-right mt-20 md:mt-20 px-6 md:px-10 lg:px-0">
           
-          <h1 className="font-tan text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] mb-6">
+          <h1 className="font-tan text-[1.4rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[4.5rem] leading-relaxed mb-6 mr-8 lg:mr-0">
             <span 
               className="block text-transparent"
               style={{
@@ -76,20 +76,20 @@ const Home = () => {
             </span>
           </h1>
 
-          <div className="max-w-2xl ml-auto">
-            <p className="text-xl sm:text-2xl md:text-3xl font-light text-[#493B32] mb-6 leading-tight">
+          <div className="max-w-2xl ml-auto mt-10">
+            <p className="text-lg sm:text-2xl md:text-3xl font-open text-[#493B32] mb-6 leading-relaxed sm:leading-tight mr-8 lg:mr-0">
             Bridging the gap between
-              <span className="text-[#F75590]"> logic and empathy</span>
+              <span className="block sm:inline text-[#F75590] font-bold"> logic and empathy</span>
             </p>
             
             
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-end gap-4 sm:gap-6 mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-end gap-8 sm:gap-6 mt-20 sm:mt-10">
             <Button 
               href="/assets/resume/resume.pdf"
               variant="primary"
-              className="w-full sm:w-auto text-center"
+              className="w-[225px] sm:w-auto text-center"
               showArrow={true}
             >
               View My Resume
@@ -97,7 +97,7 @@ const Home = () => {
             <Button 
               href="#contact" 
               variant="outline"
-              className="w-full sm:w-auto text-center"
+              className="w-[225px] sm:w-auto text-center"
             >
               Let's Connect
             </Button>
@@ -106,16 +106,18 @@ const Home = () => {
       </section>
 
       {/* Animated Threads Section */}
+      <section className="col-span-full sm:mt-10">
       <AnimatedThreads />
+      </section>
 
       <section className="col-span-full grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2">
 
         {/* Category Spotlight Section */}
-        <section className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 col-span-full py-20 px-6 md:px-10 lg:px-20 bg-[#FFF7F2]">
+        <section className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 col-span-full py-5 sm:py-20 px-6 md:px-10 lg:px-20 bg-[#FFF7F2]">
           {/* Section Title */}
           <div className="col-span-full flex items-center gap-4 mb-12">
             <div 
-              className="w-[5vh] md:w-[9vh] h-[2px]"
+              className="w-[4vh] md:w-[9vh] h-[2px]"
               style={{
                 background: 'linear-gradient(to right, #493B32, #F75590)'
               }}

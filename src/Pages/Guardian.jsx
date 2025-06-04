@@ -44,25 +44,25 @@ const Guardian = () => {
       id: 2,
       title: "Custom Contacts",
       description: "Add and manage trusted emergency contacts. Choose who gets notified and when.",
-      image: ContactImage // Updated here
+      image: ContactImage 
     },
     {
       id: 3,
       title: "Live Alerts Feed",
       description: "Real-time drug contamination alerts from Vancouver Coastal Health, prioritized by severity.",
-      image: DrugAlertImage // Updated here
+      image: DrugAlertImage 
     },
     {
       id: 4,
       title: "Resource Hub",
       description: "Access harm reduction guides, naloxone training resources, and mental health support.",
-      image: WelcomeImageV1 // Updated here
+      image: WelcomeImageV1 
     },
     {
       id: 5,
       title: "Anonymous Mode",
       description: "Use the app without registration. Privacy-first approach with no personal data stored.",
-      image: WelcomeImageV1 // Updated here
+      image: WelcomeImageV1 
     }
   ];
 
@@ -75,13 +75,13 @@ const Guardian = () => {
       <div className="absolute right-10 top-0 bottom-8 h-[calc(100%-5rem)] w-[2px] bg-[#493b32]"></div>
 
       {/* Project Content Container */}
-      <div className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-1 md:col-span-6 lg:col-span-10 lg:col-start-2">
+      <div className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-1 md:col-span-6 lg:col-span-10 lg:col-start-2 ml-20 lg:ml-10">
         {/* Project Title */}
         <div className="flex flex-row items-start justify-start gap-1 mb-8 pl-0">
-          <div className="w-[4vh] sm:w-[5vh] md:w-[7vh] h-[2px] bg-[#493B32] mt-4"></div>
-          <h1 id="top" className="text-2xl sm:text-5xl font-tan text-[#493B32]">
+        <div className="w-[4vh] sm:w-[4vh] md:w-[5vh] h-[3px] bg-gradient-to-r from-[#493B32] to-[#F75590] mt-6"></div>
+            <h1 id="top" className="text-2xl sm:text-5xl leading-relaxed font-tan text-[#493B32]">
             Guardian - Overdose Prevention App
-          </h1>
+            </h1>
         </div>
         {/* Hero Image - Full Width */}
         <div className="w-full mb-16">
@@ -96,77 +96,76 @@ const Guardian = () => {
         
 
         {/* Project Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4 sm:px-0">
           {/* Project Type Card */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
-                <svg className="w-5 h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">Project Type</h3>
-                <p className="text-lg font-medium text-[#493B32]">5-week design sprint</p>
-                <p className="text-sm text-[#493B32]/80 mt-1">(Lean UX)</p>
+                <h3 className="text-xs sm:text-sm font-medium text-[#493B32]/60 mb-0.5 sm:mb-1">Project Type</h3>
+                <p className="text-base sm:text-lg font-medium text-[#493B32]">5-week design sprint</p>
+                <p className="text-xs sm:text-sm text-[#493B32]/80 mt-0.5 sm:mt-1">(Lean UX)</p>
               </div>
             </div>
           </div>
 
           {/* Team Size Card */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
-                <svg className="w-5 h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">Team Size</h3>
-                <p className="text-lg font-medium text-[#493B32]">2 members</p>
-                <p className="text-sm text-[#493B32]/80 mt-1">Collaborative effort</p>
+                <h3 className="text-xs sm:text-sm font-medium text-[#493B32]/60 mb-0.5 sm:mb-1">Team Size</h3>
+                <p className="text-base sm:text-lg font-medium text-[#493B32]">2 members</p>
+                <p className="text-xs sm:text-sm text-[#493B32]/80 mt-0.5 sm:mt-1">Collaborative effort</p>
               </div>
             </div>
           </div>
 
           {/* Role Card */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
-                <svg className="w-5 h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">My Role</h3>
-                <p className="text-lg font-medium text-[#493B32]">UX/UI Designer</p>
+                <h3 className="text-xs sm:text-sm font-medium text-[#493B32]/60 mb-0.5 sm:mb-1">My Role</h3>
+                <p className="text-base sm:text-lg font-medium text-[#493B32]">UX/UI Designer</p>
               </div>
             </div>
           </div>
 
           {/* Tools & Process Card */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
-                <svg className="w-5 h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">Tools & Process</h3>
-                <div className="flex items-center gap-3 mt-2">
+                <h3 className="text-xs sm:text-sm font-medium text-[#493B32]/60 mb-0.5 sm:mb-1">Tools & Process</h3>
+                <div className="flex items-center gap-2 sm:gap-3 mt-1 sm:mt-2">
                   {/* Figma Icon */}
-                  <div className="w-8 h-8 flex items-center justify-center bg-[#493B32]/5 rounded-lg hover:bg-[#493B32]/10 transition-colors group cursor-pointer" title="Figma">
-                    <FaFigma className="w-5 h-5 text-[#493B32]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-[#493B32]/5 rounded-lg hover:bg-[#493B32]/10 transition-colors group cursor-pointer" title="Figma">
+                    <FaFigma className="w-4 h-4 sm:w-5 sm:h-5 text-[#493B32]" />
                   </div>
                   
                   {/* Canva Icon */}
-                  <div className="w-8 h-8 flex items-center justify-center bg-[#493B32]/5 rounded-lg hover:bg-[#493B32]/10 transition-colors group cursor-pointer" title="Canva">
-                    <SiCanva className="w-5 h-5 text-[#493B32]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center bg-[#493B32]/5 rounded-lg hover:bg-[#493B32]/10 transition-colors group cursor-pointer" title="Canva">
+                    <SiCanva className="w-4 h-4 sm:w-5 sm:h-5 text-[#493B32]" />
                   </div>
                 </div>
-               
               </div>
             </div>
           </div>

@@ -85,7 +85,7 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed left-10 top-1/2 transform -translate-y-1/2 z-[100]"
+      className="hidden md:block fixed left-10 top-1/2 transform -translate-y-1/2 z-[100]"
     >
       <div className="flex flex-col items-center gap-4 bg-[#FFF7F2] p-4 rounded-full shadow-lg border border-[#493B32]/20">
         {/* Show category filters on projects list page */}
