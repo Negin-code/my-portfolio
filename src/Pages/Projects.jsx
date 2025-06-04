@@ -32,8 +32,8 @@ const Projects = () => {
     {
       image: GuardianImage,
       imageAlt: "Overdose Prevention App",
-      category: "Front-end",
-      categoryType: "coding",
+      category: "UI/UX Design",
+      categoryType: "design",
       title: "Guardian",
       description: "A modern, responsive portfolio website showcasing design and development projects with interactive elements.",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
@@ -44,7 +44,7 @@ const Projects = () => {
     {
       image: CultureCafeImage,
       imageAlt: "Culture Cafe",
-      category: "UI/UX Design",
+      category: "Service Design",
       categoryType: "design",
       title: "Culture Cafe",
       description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",

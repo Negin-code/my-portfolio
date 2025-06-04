@@ -52,7 +52,7 @@ const Home = () => {
         {/* Title section - full width */}
         <div className="col-span-4 md:col-span-6 lg:col-span-11 text-right mt-20 md:mt-20 px-6 md:px-10 lg:px-0">
           
-          <h1 className="font-tan text-[1.4rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[4.5rem] leading-relaxed mb-6 mr-8 lg:mr-0">
+          <h1 className="font-tan text-[1.4rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[5rem] xl:text-[6rem] leading-relaxed mb-6 mr-8 lg:mr-0">
             <span 
               className="block text-transparent"
               style={{
@@ -85,7 +85,7 @@ const Home = () => {
             
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-end gap-8 sm:gap-6 mt-20 sm:mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-end sm:mr-8 lg:mr-0 gap-8 sm:gap-6 mt-20 sm:mt-10">
             <Button 
               href="/assets/resume/resume.pdf"
               variant="primary"
@@ -106,7 +106,7 @@ const Home = () => {
       </section>
 
       {/* Animated Threads Section */}
-      <section className="col-span-full sm:mt-10">
+      <section className="col-span-full mt-20 sm:mt-15">
       <AnimatedThreads />
       </section>
 
