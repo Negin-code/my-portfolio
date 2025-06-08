@@ -9,7 +9,7 @@ import {
 } from "react-icons/io5";
 import { SiCanva } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
-import GuardianImage from "../assets/hero.svg";
+import GuardianImage from "../assets/hero.png";
 import PersonaImage from "../assets/Persona.jpg";
 import WelcomeImageV1 from "../assets/Welcome-V1.svg";
 import WelcomeImage from "../assets/Welcome.svg";
