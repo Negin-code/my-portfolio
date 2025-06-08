@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { IoIosArrowDropupCircle } from "react-icons/io";
-import { IoIosArrowRoundBack } from "react-icons/io";
-import CrimsonPlateImage from "../assets/CrimsonPlate.png";
+import { FaGithub, FaExternalLinkAlt, FaClock, FaCode, FaLink, FaTools } from 'react-icons/fa';
+import { IoIosArrowDropupCircle, IoIosArrowRoundBack } from "react-icons/io";
+import CrimsonPlateImage from "../assets/CrimsonPlateHero.webp";
+import ProjectHero from '../Components/ProjectHero';
 
 const CrimsonPlate = () => {
   return (
@@ -14,95 +14,93 @@ const CrimsonPlate = () => {
       {/* Right border line */}
       <div className="absolute right-10 top-0 bottom-8 h-[calc(100%-5rem)] w-[2px] bg-[#493b32]"></div>
 
-      {/* Project Title */}
-      <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-span-10 lg:col-start-2 flex flex-row items-start justify-start gap-1 px-20 pt-15 sm:pt-25 lg:pt-0">
-        <div className="w-[4vh] sm:w-[5vh] md:w-[7vh] h-[2px] bg-[#493B32] mt-4"></div>
-        <h1 id="top"  className="text-2xl sm:text-5xl font-tan text-[#493B32] mb-12">
-          Crimson Plate
-        </h1>
-      </div>
+      {/* Project Content Container */}
+      <div className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-1 md:col-span-6 lg:col-span-10 lg:col-start-2 ml-20 lg:ml-10">
+        <ProjectHero 
+          title="Crimson Plate"
+          image={CrimsonPlateImage}
+          imageAlt="Crimson Plate Website Preview"
+        />
 
-      {/* Project Content */}
-      <div className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-1 md:col-span-6 lg:col-span-10 lg:col-start-2 pl-20">
-        {/* Project Preview */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-          {/* Image Section */}
-          <div className="lg:col-span-7">
-            <div className="overflow-hidden">
-              <img
-                src={CrimsonPlateImage}
-                alt="Crimson Plate Website Preview"
-                className="w-full h-auto lg:scale-90"
-              />
+        {/* Project Info Cards */}
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 px-4 sm:px-0">
+          {/* Project Type Card */}
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <FaClock className="w-5 h-5 sm:w-6 sm:h-6 text-[#493B32]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">Project Type</h3>
+                <p className="text-lg sm:text-xl font-medium text-[#493B32]">Front End</p>
+                <p className="text-sm text-[#493B32]/80 mt-1">Restaurant Website</p>
+              </div>
             </div>
           </div>
 
-          {/* Project Info Section */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-block px-3 py-1 bg-[#5E3F27] text-[#FFF7F2] text-lg font-medium rounded-sm">
-              Front End
+          {/* Tech Stack Card */}
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <FaCode className="w-5 h-5 sm:w-6 sm:h-6 text-[#493B32]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">Tech Stack</h3>
+                <p className="text-lg sm:text-xl font-medium text-[#493B32]">Modern Web</p>
+                <p className="text-sm text-[#493B32]/80 mt-1">HTML, JS, Tailwind</p>
+              </div>
             </div>
-            
-            <div className="w-full h-[1px] bg-[#493B32]"></div>
-            
-            <h2 className="text-2xl font-semibold text-[#493B32]">
-              Responsive Restaurant Website
-            </h2>
-            
-            <div className="w-full h-[1px] bg-[#493B32]"></div>
-            
-            <p className="text-[#493B32] leading-relaxed">
-              My goal was to create a responsive, visually engaging, and user-friendly restaurant
-              website that delivers an intuitive, interactive digital experience while accurately reflecting
-              the restaurant's brand, ensuring seamless navigation, performance, and accessibility.
-            </p>
+          </div>
 
-            <div className="w-full h-[1px] bg-[#493B32]"></div>
-
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2">
-              <span className="border border-[#493B32] px-3 py-1 text-[#493B32]">HTML</span>
-              <span className="border border-[#493B32] px-3 py-1 text-[#493B32]">JavaScript</span>
-              <span className="border border-[#493B32] px-3 py-1 text-[#493B32]">Tailwind CSS</span>
-            </div>
-
-            <div className="w-full h-[1px] bg-[#493B32]"></div>
-
-            {/* Links */}
-            <div className="flex gap-4 pt-4">
-              <a
-                href="https://github.com/Negin-code/crimson-plate-restaurant.git"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-[#493B32] hover:text-[#5E3F27]"
-              >
-                <FaGithub className="mr-2" size={20} />
-                Github
-              </a>
-              <a
-                href="https://crimsonplate.neginasem.ca/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-[#493B32] hover:text-[#5E3F27]"
-              >
-                <FaExternalLinkAlt className="mr-2" size={20} />
-                Live website
-              </a>
+          {/* Links Card */}
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-shadow group">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
+                <FaLink className="w-5 h-5 sm:w-6 sm:h-6 text-[#493B32]" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-sm font-medium text-[#493B32]/60 mb-1">Quick Links</h3>
+                <div className="flex flex-col gap-2 mt-3">
+                  <a 
+                    href="https://github.com/Negin-code/crimson-plate-restaurant.git" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-[#493B32]/5 hover:bg-[#493B32]/10 transition-all group/link"
+                  >
+                    <FaGithub className="w-5 h-5 text-[#493B32] group-hover/link:scale-110 transition-transform" />
+                    <span className="text-sm font-medium text-[#493B32]">View Source Code</span>
+                  </a>
+                  <a 
+                    href="https://crimsonplate.neginasem.ca/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-[#493B32]/5 hover:bg-[#493B32]/10 transition-all group/link"
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4 text-[#493B32] group-hover/link:scale-110 transition-transform" />
+                    <span className="text-sm font-medium text-[#493B32]">Visit Live Site</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Overview Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-tan text-[#493B32] mb-6">Overview</h2>
-          <div className="text-[#493B32] space-y-4">
-            <p>
+        {/* Project Overview Section */}
+        <section id="overview" className="space-y-8 mt-16 sm:mt-24 px-4 sm:px-0">
+          <div className="flex flex-row items-center gap-3">
+            <div className="w-[3vh] sm:w-[4vh] md:w-[5vh] h-[2px] bg-[#493B32]"></div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-tan text-[#493B32]">Project Overview</h2>
+          </div>
+
+          <div className="space-y-6">
+            <p className="text-lg sm:text-xl text-[#493B32] leading-relaxed">
               The Crimson Plate project was a practical demonstration of my front-end development expertise,
               focusing on responsive design, interactivity, and performance optimization. The objective was
               to create a fully functional restaurant website that not only looks visually appealing but also
               provides a seamless and engaging user experience.
             </p>
-            <p>
+
+            <p className="text-lg sm:text-xl text-[#493B32] leading-relaxed">
               I chose Tailwind CSS for its utility-first approach, which allowed me to quickly build a structured,
               mobile-friendly layout with minimal custom CSS. Tailwind's predefined classes ensured a consistent
               design system, improved scalability, and reduced development time while maintaining flexibility for
@@ -111,80 +109,95 @@ const CrimsonPlate = () => {
           </div>
         </section>
 
-        {/* Libraries Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          {/* JavaScript Libraries */}
-          <section>
-            <div className="flex flex-row items-center gap-2">
-          <div className="w-[3vh] sm:w-[3vh] md:w-[4vh] h-[2px] bg-[#493B32] mt-0 mb-6"></div>
-            <h2 className="text-2xl sm:text-3xl font-tan text-[#493B32] mb-6">JavaScript Libraries</h2>
-            </div>
-            <ul className="space-y-4 text-[#493B32]">
-              <li>
-                <strong>AOS (Animate on Scroll)</strong> – JavaScript library for
-                scroll-based animations.
-              </li>
-              <li>
-                <strong>Typed.js</strong> – JavaScript library for typing text
-                animations.
-              </li>
-              <li>
-                <strong>SweetAlert.js</strong> – JavaScript library for modern
-                pop-up alerts.
-              </li>
-            </ul>
-          </section>
+        {/* Technologies Section */}
+        <section id="technologies" className="mt-16 sm:mt-24 px-4 sm:px-0">
+          <div className="flex flex-row items-center gap-3 mb-10">
+            <div className="w-[3vh] sm:w-[4vh] md:w-[5vh] h-[2px] bg-[#493B32]"></div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-tan text-[#493B32]">Technologies Used</h2>
+          </div>
 
-          {/* jQuery Plugins */}
-          <section>
-          <div className="flex flex-row items-center gap-2">
-          <div className="w-[3vh] sm:w-[3vh] md:w-[4vh] h-[2px] bg-[#493B32] mt-0 mb-6"></div>
-            <h2 className="text-2xl sm:text-3xl font-tan text-[#493B32] mb-6">jQuery Plugins</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+            {/* JavaScript Libraries */}
+            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#493B32]/10">
+              <h3 className="text-xl sm:text-2xl font-medium text-[#493B32] mb-6">JavaScript Libraries</h3>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2.5 rounded-full bg-[#493B32]"></div>
+                  <div>
+                    <p className="font-medium text-lg text-[#493B32]">AOS (Animate on Scroll)</p>
+                    <p className="text-[#493B32]/70 mt-1">JavaScript library for scroll-based animations</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2.5 rounded-full bg-[#493B32]"></div>
+                  <div>
+                    <p className="font-medium text-lg text-[#493B32]">Typed.js</p>
+                    <p className="text-[#493B32]/70 mt-1">JavaScript library for typing text animations</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2.5 rounded-full bg-[#493B32]"></div>
+                  <div>
+                    <p className="font-medium text-lg text-[#493B32]">SweetAlert.js</p>
+                    <p className="text-[#493B32]/70 mt-1">JavaScript library for modern pop-up alerts</p>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <ul className="space-y-4 text-[#493B32]">
-              <li>
-                <strong>Magnific Popup</strong> – jQuery plugin for creating
-                lightbox-style galleries.
-              </li>
-              <li>
-                <strong>DataTables.js</strong> – jQuery plugin for enhancing
-                HTML tables.
-              </li>
-              <li>
-                <strong>jQuery Validation</strong> – jQuery plugin for form
-                validation.
-              </li>
-            </ul>
-          </section>
-        </div>
 
-        {/* Accessibility Note */}
-        <section className="mb-16">
-          <p className="text-[#493B32]">
-            Beyond functionality, I prioritized accessibility and performance. I applied ARIA labels,
-            semantic HTML, and WCAG-compliant color contrasts to ensure inclusivity for all users,
-            including those using assistive technologies. To optimize load times, I compressed images
-            and leveraged lazy loading to reduce initial page weight.
-          </p>
+            {/* jQuery Plugins */}
+            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#493B32]/10">
+              <h3 className="text-xl sm:text-2xl font-medium text-[#493B32] mb-6">jQuery Plugins</h3>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2.5 rounded-full bg-[#493B32]"></div>
+                  <div>
+                    <p className="font-medium text-lg text-[#493B32]">Magnific Popup</p>
+                    <p className="text-[#493B32]/70 mt-1">jQuery plugin for creating lightbox-style galleries</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2.5 rounded-full bg-[#493B32]"></div>
+                  <div>
+                    <p className="font-medium text-lg text-[#493B32]">DataTables.js</p>
+                    <p className="text-[#493B32]/70 mt-1">jQuery plugin for enhancing HTML tables</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2.5 rounded-full bg-[#493B32]"></div>
+                  <div>
+                    <p className="font-medium text-lg text-[#493B32]">jQuery Validation</p>
+                    <p className="text-[#493B32]/70 mt-1">jQuery plugin for form validation</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
-      </div>
-       {/* Back to Resume Link */}
-       <div className="col-span-8 md:col-span-10 lg:col-start-2 col-start-1 flex justify-between items-center mt-0">
-        <Link to="/projects" className="flex items-center gap-2 mx-20 lg:mx-10 lg:my-20 lg:mb-20 hover:opacity-80 transition-opacity">
-          <IoIosArrowRoundBack size={42} color="#493B32" className="my-4" />
-          <p className="font-open font-semibold text-xl lg:text-2xl text-[#493B32]">
-            Projects
-          </p>
-        </Link>
-        <div>
-          <IoIosArrowDropupCircle
-            size={40}
-            color="#493B32"
-            className="mx-20 my-10 mb-10 lg:mx-10 lg:my-20 lg:mb-20 cursor-pointer hover:opacity-80 transition-opacity"
-            onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-            aria-label="Scroll to top"
-          />
-        </div>
+
+        {/* Accessibility Section */}
+        <section id="accessibility" className="mt-16 sm:mt-24 mb-24 px-4 sm:px-0">
+          <div className="flex flex-row items-center gap-3 mb-10">
+            <div className="w-[3vh] sm:w-[4vh] md:w-[5vh] h-[2px] bg-[#493B32]"></div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-tan text-[#493B32]">Accessibility & Performance</h2>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#493B32]/5 to-[#493B32]/10 p-8 sm:p-10 rounded-xl border border-[#493B32]/10">
+            <div className="space-y-6">
+              <p className="text-lg sm:text-xl text-[#493B32] leading-relaxed">
+                Beyond functionality, I prioritized accessibility and performance. I applied ARIA labels,
+                semantic HTML, and WCAG-compliant color contrasts to ensure inclusivity for all users,
+                including those using assistive technologies.
+              </p>
+              <p className="text-lg sm:text-xl text-[#493B32] leading-relaxed">
+                To optimize load times, I compressed images and leveraged lazy loading to reduce initial page weight.
+                The site achieves excellent performance scores across all key metrics.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        
       </div>
     </main>
   );

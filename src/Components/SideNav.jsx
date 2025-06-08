@@ -31,21 +31,28 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
   ];
 
   const projectCategoryItems = [
-    { id: 'all', icon: IoGridOutline, label: 'All Projects' },
-    { id: 'design', icon: IoBrushOutline, label: 'UX/UI Design' },
-    { id: 'coding', icon: IoCodeSlashOutline, label: 'Development' }
+    { path: '/projects?category=all', icon: IoGridOutline, label: 'All Projects' },
+    { path: '/projects?category=design', icon: IoBrushOutline, label: 'UX/UI Design' },
+    { path: '/projects?category=coding', icon: IoCodeSlashOutline, label: 'Development' }
   ];
 
-  const projectNavItems = [
-    { path: '/projects/guardian#overview', icon: IoEyeOutline, label: 'Project Overview' },
-    { path: '/projects/guardian#problem', icon: IoWarningOutline, label: 'The Problem' },
-    { path: '/projects/guardian#research-discovery', icon: IoSearchOutline, label: 'Research And Discovery' },
-    { path: '/projects/guardian#design-goals', icon: IoLocateOutline, label: 'Design Goals' },
-    { path: '/projects/guardian#key-features', icon: IoListOutline, label: 'Key Features' },
-    { path: '/projects/guardian#user-feedback', icon: IoChatboxOutline, label: 'User Feedback & Iterations' },
-    { path: '/projects/guardian#design-system', icon: IoColorPaletteOutline, label: 'Design System' },
-    { path: '/projects/guardian#reflection', icon: IoRocketOutline, label: 'Reflection' }
-  ];
+  const projectNavItems = {
+    '/projects/guardian': [
+      { path: '/projects/guardian#overview', icon: IoEyeOutline, label: 'Project Overview' },
+      { path: '/projects/guardian#problem', icon: IoWarningOutline, label: 'The Problem' },
+      { path: '/projects/guardian#research-discovery', icon: IoSearchOutline, label: 'Research And Discovery' },
+      { path: '/projects/guardian#design-goals', icon: IoLocateOutline, label: 'Design Goals' },
+      { path: '/projects/guardian#key-features', icon: IoListOutline, label: 'Key Features' },
+      { path: '/projects/guardian#user-feedback', icon: IoChatboxOutline, label: 'User Feedback & Iterations' },
+      { path: '/projects/guardian#design-system', icon: IoColorPaletteOutline, label: 'Design System' },
+      { path: '/projects/guardian#reflection', icon: IoRocketOutline, label: 'Reflection' }
+    ],
+    '/projects/crimson-plate': [
+      { path: '/projects/crimson-plate#overview', icon: IoEyeOutline, label: 'Project Overview' },
+      { path: '/projects/crimson-plate#technologies', icon: IoCodeSlashOutline, label: 'Technologies Used' },
+      { path: '/projects/crimson-plate#accessibility', icon: IoColorPaletteOutline, label: 'Accessibility & Performance' }
+    ]
+  };
 
   const handleNavClick = (e, path) => {
     const [route, hash] = path.split('#');
@@ -53,7 +60,7 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
       e.preventDefault();
       const element = document.getElementById(hash);
       if (element) {
-        const headerOffset = 200; // Adjust this value based on your header height
+        const headerOffset = 200;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -66,6 +73,10 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
   };
 
   const isActive = (path) => {
+    if (path.includes('?category=')) {
+      const category = path.split('?category=')[1];
+      return selectedCategory === category;
+    }
     if (path === '/') {
       return location.pathname === '/';
     }
@@ -78,7 +89,7 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
 
   const isProjectPage = location.pathname.startsWith('/projects/');
   const isProjectsListPage = location.pathname === '/projects';
-  const navItems = isProjectPage ? projectNavItems : mainNavItems;
+  const currentProjectNavItems = projectNavItems[location.pathname] || [];
 
   return (
     <motion.nav
@@ -93,34 +104,33 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
           <>
             {projectCategoryItems.map((item, index) => {
               const Icon = item.icon;
-              const isActiveCategory = selectedCategory === item.id;
-              
               return (
                 <div
-                  key={item.id}
+                  key={item.path}
                   className="relative"
-                  onMouseEnter={() => setIsHovered(`category-${index}`)}
+                  onMouseEnter={() => setIsHovered(index)}
                   onMouseLeave={() => setIsHovered(null)}
                 >
-                  <button
-                    onClick={() => onCategoryChange(item.id)}
+                  <NavLink
+                    to={item.path}
+                    onClick={() => onCategoryChange(item.path.split('?category=')[1])}
                     className={`block p-3 rounded-full transition-all duration-300 ${
-                      isActiveCategory
-                        ? 'bg-[#493B32]/20 text-[#493B32]'
+                      isActive(item.path)
+                        ? 'text-[#493B32]'
                         : 'text-[#493B32] hover:bg-[#493B32]/10'
                     }`}
                   >
-                    <Icon size={25} />
-                  </button>
+                    <Icon size={22} />
+                  </NavLink>
                   
                   {/* Label tooltip */}
                   <AnimatePresence>
-                    {isHovered === `category-${index}` && (
+                    {isHovered === index && (
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -10 }}
-                        className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm"
+                        className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
                       >
                         {item.label}
                       </motion.div>
@@ -133,43 +143,39 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
         )}
 
         {/* Regular navigation items */}
-        {navItems.map((item, index) => (
-          item.divider ? (
-            <div key={`divider-${index}`} className="w-full h-[1px] bg-[#493B32]/20 mx-auto" />
-          ) : (
-            <div
-              key={item.path}
-              className="relative"
-              onMouseEnter={() => setIsHovered(index)}
-              onMouseLeave={() => setIsHovered(null)}
+        {isProjectPage && currentProjectNavItems.map((item, index) => (
+          <div
+            key={item.path}
+            className="relative"
+            onMouseEnter={() => setIsHovered(index)}
+            onMouseLeave={() => setIsHovered(null)}
+          >
+            <NavLink
+              to={item.path}
+              onClick={(e) => handleNavClick(e, item.path)}
+              className={`block p-3 rounded-full transition-all duration-300 ${
+                isActive(item.path)
+                  ? 'text-[#493B32]'
+                  : 'text-[#493B32] hover:bg-[#493B32]/10'
+              }`}
             >
-              <NavLink
-                to={item.path}
-                onClick={(e) => handleNavClick(e, item.path)}
-                className={`block p-3 rounded-full transition-all duration-300 ${
-                  isActive(item.path)
-                    ? 'bg-[#FFF7F2] text-[#493B32] shadow-md'
-                    : 'text-[#493B32] hover:bg-[#493B32]/10'
-                }`}
-              >
-                <item.icon size={20} />
-              </NavLink>
-              
-              {/* Label tooltip */}
-              <AnimatePresence>
-                {isHovered === index && (
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -10 }}
-                    className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
-                  >
-                    {item.label}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          )
+              <item.icon size={20} />
+            </NavLink>
+            
+            {/* Label tooltip */}
+            <AnimatePresence>
+              {isHovered === index && (
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
+                >
+                  {item.label}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         ))}
 
         {/* Separator and Projects Link when on project page */}
@@ -183,7 +189,7 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
             >
               <NavLink
                 to="/projects"
-                className="block p-3  transition-all duration-300 text-[#493B32] hover:bg-[#493B32]/10"
+                className="block p-3 rounded-full transition-all duration-300 text-[#493B32] hover:bg-[#493B32]/10"
               >
                 <IoGridOutline size={20} />
               </NavLink>

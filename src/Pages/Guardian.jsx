@@ -24,6 +24,7 @@ import ResourceHubImage from "../assets/ResourcesHome.svg";
 
 
 import "./Guardian.css";
+import ProjectHero from '../Components/ProjectHero';
 
 const Guardian = () => {
   const [selectedFeature, setSelectedFeature] = useState(1);
@@ -76,24 +77,11 @@ const Guardian = () => {
 
       {/* Project Content Container */}
       <div className="col-span-4 col-start-1 sm:col-span-4 sm:col-start-1 md:col-span-6 lg:col-span-10 lg:col-start-2 ml-20 lg:ml-10">
-        {/* Project Title */}
-        <div className="flex flex-row items-start justify-start gap-1 mb-8 pl-0">
-        <div className="w-[4vh] sm:w-[4vh] md:w-[5vh] h-[3px] bg-gradient-to-r from-[#493B32] to-[#F75590] mt-6"></div>
-            <h1 id="top" className="text-2xl sm:text-5xl leading-relaxed font-tan text-[#493B32]">
-            Guardian - Overdose Prevention App
-            </h1>
-        </div>
-        {/* Hero Image - Full Width */}
-        <div className="w-full mb-16">
-          <div className="relative w-full overflow-hidden bg-[#FFF7F2] max-h-[600px]">
-            <img
-              src={GuardianImage}
-              alt="Guardian Project Preview"
-              className="w-full h-[600px] object-cover"
-            />
-          </div>
-        </div>
-        
+        <ProjectHero 
+          title="Guardian - Overdose Prevention App"
+          image={GuardianImage}
+          imageAlt="Guardian Project Preview"
+        />
 
         {/* Project Info Cards */}
         <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4 sm:px-0">
@@ -1068,31 +1056,168 @@ const Guardian = () => {
         </section>
         {/* Key Features section */}
         <section id="key-features" className="mt-16 overflow-hidden">
-          <div className="flex flex-row items-center gap-2 px-4 md:px-8">
+          <div className="flex flex-row items-center gap-2 mb-12">
             <div className="w-[3vh] sm:w-[3vh] md:w-[4vh] h-[2px] bg-[#493B32]"></div>
             <h2 className="text-2xl sm:text-3xl font-tan text-[#493B32]">
               Key Features
             </h2>
           </div>
 
-          {/* Features Carousel Container */}
-          <div className="mt-12 relative">
-            {/* Left Gradient Overlay */}
-            <div 
-              className="absolute left-0 top-0 bottom-0 w-8 md:w-16 z-10"
-              style={{
-                background: 'linear-gradient(to right, #FFF7F2, transparent)'
-              }}
-            ></div>
-            
-            {/* Right Gradient Overlay */}
-            <div 
-              className="absolute right-0 top-0 bottom-0 w-8 md:w-16 z-10"
-              style={{
-                background: 'linear-gradient(to left, #FFF7F2, transparent)'
-              }}
-            ></div>
+          {/* Decorative Frame Container */}
+          <div className="relative mx-auto max-w-[1200px] p-4 md:p-8">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-[#FFF7F2] rounded-3xl shadow-lg">
+              {/* Subtle Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/50 rounded-3xl"></div>
+            </div>
 
+            {/* Content Container */}
+            <div className="relative z-10 p-4 md:p-8 lg:p-12">
+              {/* Features Carousel Container */}
+              <div className="relative">
+                {/* Background Design Elements */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="absolute top-1/4 -left-10 w-40 h-40 bg-[#F75590]/10 rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-1/4 -right-10 w-40 h-40 bg-[#493B32]/10 rounded-full blur-3xl"></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-gradient-to-b from-transparent via-[#FFF7F2]/50 to-transparent"></div>
+                </div>
+
+                {/* Main Content Container */}
+                <div className="relative z-10 max-w-6xl mx-auto">
+                  {/* Feature Category Label */}
+                  <div className="text-center mb-8">
+                    <span className="inline-block px-6 py-2 bg-[#493B32]/5 rounded-full text-sm font-medium text-[#493B32]/70 tracking-wider uppercase">
+                      Feature {selectedFeature} of {features.length}
+                    </span>
+                  </div>
+
+                  {/* iPhone Frame Container */}
+                  <div className="relative">
+                    {/* Left Gradient Overlay */}
+                    <div 
+                      className="absolute left-0 top-0 bottom-0 w-8 md:w-16 z-10"
+                      style={{
+                        background: 'linear-gradient(to right, #FFF7F2, transparent)'
+                      }}
+                    ></div>
+                    
+                    {/* Right Gradient Overlay */}
+                    <div 
+                      className="absolute right-0 top-0 bottom-0 w-8 md:w-16 z-10"
+                      style={{
+                        background: 'linear-gradient(to left, #FFF7F2, transparent)'
+                      }}
+                    ></div>
+
+                    {/* iPhone Frame */}
+                    <div className="w-[240px] md:w-[320px] h-[480px] md:h-[660px] mx-auto relative transform transition-transform duration-700 hover:scale-[1.02]">
+                      <div className="absolute inset-0 bg-[#F75590] rounded-[45px] md:rounded-[55px] p-4 shadow-xl">
+                        {/* Dynamic Island */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[95px] md:w-[126px] h-[26px] md:h-[35px] bg-[#F75590] rounded-b-[18px] md:rounded-b-[24px] flex items-center justify-center">
+                          <div className="w-[68px] md:w-[90px] h-[18px] md:h-[24px] bg-black rounded-[15px] md:rounded-[20px] flex items-center">
+                            <div className="w-[9px] md:w-[12px] h-[9px] md:h-[12px] rounded-full bg-[#1a1a1a] ml-2"></div>
+                            <div className="w-[6px] md:w-[8px] h-[6px] md:h-[8px] rounded-full bg-[#1a1a1a] ml-2"></div>
+                            <div className="w-[30px] md:w-[40px] h-[3px] md:h-[4px] rounded-full bg-[#1a1a1a] ml-2"></div>
+                          </div>
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="absolute top-[83px] md:top-[110px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
+                        <div className="absolute top-[143px] md:top-[190px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
+                        <div className="absolute top-[180px] md:top-[240px] -left-[2px] w-[3px] md:w-[4px] h-[30px] md:h-[40px] bg-[#2a2a2a] rounded-l-full"></div>
+                        <div className="absolute top-[98px] md:top-[130px] -right-[2px] w-[3px] md:w-[4px] h-[38px] md:h-[50px] bg-[#2a2a2a] rounded-r-full"></div>
+
+                        {/* Screen Content */}
+                        <div className="relative w-full h-full rounded-[38px] md:rounded-[48px] overflow-hidden bg-white">
+                          {/* Carousel Container */}
+                          <div 
+                            className="carousel-container relative w-full h-full flex transition-transform duration-700 ease-in-out" 
+                            style={{ transform: `translateX(-${(selectedFeature - 1) * 100}%)` }}
+                          >
+                            {features.map((feature) => (
+                              <div key={feature.id} className="min-w-full h-full">
+                                <img
+                                  src={feature.image}
+                                  alt={feature.title}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature Content */}
+                  <div className="relative mt-12 text-center max-w-2xl mx-auto">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#493B32]/20 to-transparent"></div>
+                    <div className="pt-8 space-y-4">
+                      <h3 className="text-2xl font-medium text-[#493B32] transition-all duration-500">
+                        {features[selectedFeature - 1].title}
+                      </h3>
+                      <p className="text-[#493B32]/70 text-lg leading-relaxed transition-all duration-500">
+                        {features[selectedFeature - 1].description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Navigation */}
+                  <div className="mt-12 flex flex-col items-center gap-8">
+                    {/* Dots */}
+                    <div className="flex justify-center items-center gap-4">
+                      {features.map((feature, index) => (
+                        <button 
+                          key={feature.id}
+                          className={`group relative w-4 h-4 transition-all duration-300 ${
+                            selectedFeature === index + 1 ? 'scale-125' : 'hover:scale-110'
+                          }`}
+                          aria-label={`Show ${feature.title}`}
+                          onClick={() => setSelectedFeature(index + 1)}
+                        >
+                          <div className={`absolute inset-0 bg-[#493B32] rounded-full transition-all duration-300 ${
+                            selectedFeature === index + 1 ? 'opacity-100' : 'opacity-30 group-hover:opacity-50'
+                          }`}></div>
+                          <div className={`absolute inset-0 bg-[#493B32] rounded-full transform transition-transform duration-300 ${
+                            selectedFeature === index + 1 ? 'animate-ping opacity-25' : 'opacity-0'
+                          }`}></div>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Arrow Navigation */}
+                    <div className="flex justify-center gap-4">
+                      <button
+                        onClick={() => setSelectedFeature(prev => Math.max(1, prev - 1))}
+                        className={`p-2 rounded-full transition-all duration-300 ${
+                          selectedFeature === 1 
+                            ? 'opacity-30 cursor-not-allowed' 
+                            : 'hover:bg-[#493B32]/10'
+                        }`}
+                        disabled={selectedFeature === 1}
+                      >
+                        <svg className="w-6 h-6 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() => setSelectedFeature(prev => Math.min(features.length, prev + 1))}
+                        className={`p-2 rounded-full transition-all duration-300 ${
+                          selectedFeature === features.length 
+                            ? 'opacity-30 cursor-not-allowed' 
+                            : 'hover:bg-[#493B32]/10'
+                        }`}
+                        disabled={selectedFeature === features.length}
+                      >
+                        <svg className="w-6 h-6 text-[#493B32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
           {/* User Feedback & Iteration Section */}    
@@ -1246,7 +1371,7 @@ const Guardian = () => {
                       </svg>
                       <span className="text-sm text-[#493B32]/60">Version 3.0</span>
                     </div>
-                  </div>
+            </div>
 
                   <div className="relative group">
                     {/* Phone Frame */}

@@ -1,12 +1,10 @@
 import React from "react";
 import { useOutletContext, useSearchParams } from "react-router-dom";
-import { BiPalette, BiCodeAlt } from "react-icons/bi";
-import { HiOutlineViewGrid } from "react-icons/hi";
-import CrimsonPlateImage from "../assets/CrimsonPlate.png";
+import CrimsonPlateImage from "../assets/CrimsonPlate.webp";
 import AlzcareImage from "../assets/Alzcare.svg";
 import ListeningLabImage from "../assets/LLCover.png";
 import CultureCafeImage from "../assets/CCCover.png";
-import GuardianImage from "../assets/Guardiancard.svg";
+import GuardianImage from "../assets/Guardiancard.webp";
 
 import ChromaGridCard from "../components/ChromaGridCard";
 import "./Projects.css";
@@ -35,8 +33,8 @@ const Projects = () => {
       category: "UI/UX Design",
       categoryType: "design",
       title: "Guardian",
-      description: "A modern, responsive portfolio website showcasing design and development projects with interactive elements.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      description: "Guardian is a mobile app designed to help users manage their medication adherence and prevent overdose incidents. It provides a user-friendly interface for tracking medication intake, setting reminders, and accessing overdose prevention resources.",
+      technologies: ["Figma", "Canva"],
       projectLink: "/projects/guardian#top",
       gradientFrom: "#F75590",
       gradientTo: "#FF8C94"
@@ -48,7 +46,7 @@ const Projects = () => {
       categoryType: "design",
       title: "Culture Cafe",
       description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",
-      technologies: ["Figma", "Research", "Prototyping"],
+      technologies: ["Research", "Prototyping"],
       projectLink: "/projects/culture-cafe#top",
       gradientFrom: "#7B6F63",
       gradientTo: "#493B32"
@@ -83,22 +81,13 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.categoryType === selectedCategory);
 
-  const navItems = [
-    { id: "all", icon: HiOutlineViewGrid, label: "All Projects" },
-    { id: "design", icon: BiPalette, label: "UX/UI Design" },
-    { id: "coding", icon: BiCodeAlt, label: "Development" }
-  ];
-
   return (
     <main className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 min-h-screen relative w-full pt-30 sm:pt-45 lg:pt-50 lg:px-0 overflow-hidden">
       {/* Left vertical line */}
-      <div className="absolute left-16 md:left-20 top-0 sm:h-[90rem] h-[190rem] md:h-[115rem] lg:h-[80rem] w-[2px] bg-[#493b32]">
-    
-      </div>
+      <div className="absolute left-16 md:left-20 top-0 sm:h-[90rem] h-[190rem] md:h-[115rem] lg:h-[80rem] w-[2px] bg-[#493b32]"></div>
 
       {/* Right vertical line */}
-      <div className="absolute right-10 top-0 sm:h-[35rem] h-[190rem] md:h-[115rem] lg:h-[80rem] w-[2px] bg-[#493b32]">
-      </div>
+      <div className="absolute right-10 top-0 sm:h-[35rem] h-[190rem] md:h-[115rem] lg:h-[80rem] w-[2px] bg-[#493b32]"></div>
 
       {/* Content container */}
       <section className="col-span-full grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 ml-20 lg:ml-10">
