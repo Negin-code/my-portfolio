@@ -10,6 +10,7 @@ import AlzCare from './Pages/AlzCare';
 import ListeningLab from './Pages/ListeningLab';
 import CultureCafe from './Pages/CultureCafe';
 import Guardian from './Pages/Guardian';
+import GoodReads from './Pages/GoodReads';
 import './App.css';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/projects/listening-lab" element={<ListeningLab />} />
           <Route path="/projects/culture-cafe" element={<CultureCafe />} />
           <Route path="/projects/guardian" element={<Guardian />} />
+          <Route path="/projects/goodreads" element={<GoodReads />} />
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Route>
       </Routes>

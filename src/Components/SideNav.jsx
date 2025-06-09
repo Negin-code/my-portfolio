@@ -51,6 +51,12 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
       { path: '/projects/crimson-plate#overview', icon: IoEyeOutline, label: 'Project Overview' },
       { path: '/projects/crimson-plate#technologies', icon: IoCodeSlashOutline, label: 'Technologies Used' },
       { path: '/projects/crimson-plate#accessibility', icon: IoColorPaletteOutline, label: 'Accessibility & Performance' }
+    ],
+    '/projects/goodreads': [
+      { path: '/projects/goodreads#overview', icon: IoEyeOutline, label: 'Project Overview' },
+      { path: '/projects/goodreads#research', icon: IoSearchOutline, label: 'Research & Analysis' },
+      { path: '/projects/goodreads#findings', icon: IoListOutline, label: 'Key Findings' },
+      { path: '/projects/goodreads#recommendations', icon: IoRocketOutline, label: 'Recommendations' }
     ]
   };
 
@@ -99,6 +105,77 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
       className="hidden md:block fixed left-10 top-1/2 transform -translate-y-1/2 z-[100]"
     >
       <div className="flex flex-col items-center gap-4 bg-[#FFF7F2] p-4 rounded-full shadow-lg border border-[#493B32]/20">
+        {/* Back to Projects Link when on project page */}
+        {isProjectPage && (
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered('back')}
+            onMouseLeave={() => setIsHovered(null)}
+          >
+            <NavLink
+              to="/projects"
+              className="block p-3 rounded-full transition-all duration-300 text-[#493B32] hover:bg-[#493B32]/10"
+            >
+              <IoGridOutline size={20} />
+            </NavLink>
+            
+            {/* Label tooltip */}
+            <AnimatePresence>
+              {isHovered === 'back' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
+                >
+                  Back to Projects
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
+
+        {/* Regular navigation items */}
+        {isProjectPage && (
+          <>
+            <div className="w-full h-[1px] bg-[#493B32]/20 mx-auto"></div>
+            {currentProjectNavItems.map((item, index) => (
+              <div
+                key={item.path}
+                className="relative"
+                onMouseEnter={() => setIsHovered(index)}
+                onMouseLeave={() => setIsHovered(null)}
+              >
+                <NavLink
+                  to={item.path}
+                  onClick={(e) => handleNavClick(e, item.path)}
+                  className={`block p-3 rounded-full transition-all duration-300 ${
+                    isActive(item.path)
+                      ? 'bg-[#FFF7F2] text-[#493B32] shadow-md'
+                      : 'text-[#493B32] hover:bg-[#493B32]/10'
+                  }`}
+                >
+                  <item.icon size={20} />
+                </NavLink>
+                
+                {/* Label tooltip */}
+                <AnimatePresence>
+                  {isHovered === index && (
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
+                      className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
+                    >
+                      {item.label}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </>
+        )}
+
         {/* Show category filters on projects list page */}
         {isProjectsListPage && onCategoryChange && (
           <>
@@ -139,75 +216,6 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
                 </div>
               );
             })}
-          </>
-        )}
-
-        {/* Regular navigation items */}
-        {isProjectPage && currentProjectNavItems.map((item, index) => (
-          <div
-            key={item.path}
-            className="relative"
-            onMouseEnter={() => setIsHovered(index)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
-            <NavLink
-              to={item.path}
-              onClick={(e) => handleNavClick(e, item.path)}
-              className={`block p-3 rounded-full transition-all duration-300 ${
-                isActive(item.path)
-                  ? 'text-[#493B32]'
-                  : 'text-[#493B32] hover:bg-[#493B32]/10'
-              }`}
-            >
-              <item.icon size={20} />
-            </NavLink>
-            
-            {/* Label tooltip */}
-            <AnimatePresence>
-              {isHovered === index && (
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
-                >
-                  {item.label}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
-
-        {/* Separator and Projects Link when on project page */}
-        {isProjectPage && (
-          <>
-            <div className="w-full h-[1px] bg-[#493B32]/20 mx-auto"></div>
-            <div
-              className="relative"
-              onMouseEnter={() => setIsHovered('back')}
-              onMouseLeave={() => setIsHovered(null)}
-            >
-              <NavLink
-                to="/projects"
-                className="block p-3 rounded-full transition-all duration-300 text-[#493B32] hover:bg-[#493B32]/10"
-              >
-                <IoGridOutline size={20} />
-              </NavLink>
-              
-              {/* Label tooltip */}
-              <AnimatePresence>
-                {isHovered === 'back' && (
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -10 }}
-                    className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#493B32] text-[#FFF7F2] px-3 py-1.5 rounded-md whitespace-nowrap text-sm shadow-md"
-                  >
-                    Back to Projects
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </>
         )}
       </div>

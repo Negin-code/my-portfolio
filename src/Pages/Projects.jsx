@@ -52,6 +52,18 @@ const Projects = () => {
       gradientTo: "#493B32"
     },
     {
+      image: GuardianImage,
+      imageAlt: "GoodReads Website",
+      category: "UI/UX Design",
+      categoryType: "design",
+      title: "GoodReads Website usability study",
+      description: "The goal of the GoodReads website usability study was to evaluate the effectiveness of the website's design and functionality in meeting the needs of its users.",
+      technologies: ["Figma", "Canva"],
+      projectLink: "/projects/goodreads#top",
+      gradientFrom: "#F75590",
+      gradientTo: "#FF8C94"
+    },
+    {
       image: AlzcareImage,
       imageAlt: "AlzCare App Design",
       category: "UI/UX Design",
