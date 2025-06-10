@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  IoGridOutline, 
   IoWarningOutline,
   IoRocketOutline,
   IoEyeOutline,
@@ -12,7 +11,14 @@ import {
   IoChatboxOutline,
   IoColorPaletteOutline,
   IoCodeSlashOutline,
-  IoBrushOutline,
+  IoBarChartOutline,
+  IoReaderOutline,
+  IoBulbOutline ,
+  IoConstructOutline,
+  IoChatboxEllipsesOutline,
+  IoLayersOutline ,
+  IoFolderOutline,
+  IoPhonePortraitOutline,
 } from 'react-icons/io5';
 
 
@@ -31,8 +37,8 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
   ];
 
   const projectCategoryItems = [
-    { path: '/projects?category=all', icon: IoGridOutline, label: 'All Projects' },
-    { path: '/projects?category=design', icon: IoBrushOutline, label: 'UX/UI Design' },
+    { path: '/projects?category=all', icon: IoFolderOutline, label: 'All Projects' },
+    { path: '/projects?category=design', icon: IoPhonePortraitOutline, label: 'UX/UI Design' },
     { path: '/projects?category=coding', icon: IoCodeSlashOutline, label: 'Development' }
   ];
 
@@ -44,8 +50,8 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
       { path: '/projects/guardian#design-goals', icon: IoLocateOutline, label: 'Design Goals' },
       { path: '/projects/guardian#key-features', icon: IoListOutline, label: 'Key Features' },
       { path: '/projects/guardian#user-feedback', icon: IoChatboxOutline, label: 'User Feedback & Iterations' },
-      { path: '/projects/guardian#design-system', icon: IoColorPaletteOutline, label: 'Design System' },
-      { path: '/projects/guardian#reflection', icon: IoRocketOutline, label: 'Reflection' }
+      { path: '/projects/guardian#design-system', icon: IoLayersOutline, label: 'Design System' },
+      { path: '/projects/guardian#reflection', icon: IoChatboxEllipsesOutline, label: 'Reflection' }
     ],
     '/projects/crimson-plate': [
       { path: '/projects/crimson-plate#overview', icon: IoEyeOutline, label: 'Project Overview' },
@@ -54,9 +60,14 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
     ],
     '/projects/goodreads': [
       { path: '/projects/goodreads#overview', icon: IoEyeOutline, label: 'Project Overview' },
-      { path: '/projects/goodreads#research', icon: IoSearchOutline, label: 'Research & Analysis' },
-      { path: '/projects/goodreads#findings', icon: IoListOutline, label: 'Key Findings' },
-      { path: '/projects/goodreads#recommendations', icon: IoRocketOutline, label: 'Recommendations' }
+      { path: '/projects/goodreads#objectives', icon: IoLocateOutline, label: 'Objectives' },
+      { path: '/projects/goodreads#study', icon: IoSearchOutline, label: 'User Study' },
+      { path: '/projects/goodreads#sus-score', icon: IoBarChartOutline, label: 'SUS Score' },
+      { path: '/projects/goodreads#task-insights', icon: IoReaderOutline, label: 'User Task & Insights' },
+      { path: '/projects/goodreads#key-takeaways', icon: IoBulbOutline , label: 'Key Takeaways' },
+      { path: '/projects/goodreads#solutions', icon: IoConstructOutline , label: 'Solutions' },
+      { path: '/projects/goodreads#reflection', icon: IoChatboxEllipsesOutline , label: 'Reflection' },
+      { path: '/projects/goodreads#next-steps', icon: IoRocketOutline , label: 'Next Steps' }
     ]
   };
 
@@ -116,7 +127,7 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
               to="/projects"
               className="block p-3 rounded-full transition-all duration-300 text-[#493B32] hover:bg-[#493B32]/10"
             >
-              <IoGridOutline size={20} />
+              <IoFolderOutline size={20} />
             </NavLink>
             
             {/* Label tooltip */}

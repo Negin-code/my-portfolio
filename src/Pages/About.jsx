@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { IoIosArrowDropupCircle } from "react-icons/io";
-import { HiOutlineExternalLink } from "react-icons/hi";
 import {
   FaFigma,
   FaWordpress,
@@ -28,7 +26,7 @@ import HeroContent from "../Components/HeroContent";
 import AccordionSection from "../Components/AccordionSection";
 import Value from "../Components/Value";
 import GlassIcon from "../Components/GlassIcon";
-import NeginImage1 from "../assets/profilephoto.jpg";
+import NeginImage1 from "../assets/profilephoto.png";
 import styles from "../Components/Scroll.module.css";
 import Button from '../Components/Button';
 

@@ -16,40 +16,16 @@ const Projects = () => {
   
   const projects = [
     {
-      image: CrimsonPlateImage,
-      imageAlt: "Crimson Plate Website",
-      category: "Front-end",
-      categoryType: "coding",
-      title: "Crimson Plate Website",
-      description: "The goal was to create a responsive, visually engaging, and user-friendly restaurant website that delivers an intuitive, interactive digital experience while accurately reflecting the restaurant's brand, ensuring seamless navigation, performance, and accessibility.",
-      technologies: ["HTML", "Tailwind CSS", "JavaScript"],
-      projectLink: "/projects/crimson-plate#top",
-      gradientFrom: "#F75590",
-      gradientTo: "#FF6B6B"
-    },
-    {
       image: GuardianImage,
       imageAlt: "Overdose Prevention App",
       category: "UI/UX Design",
       categoryType: "design",
       title: "Guardian",
-      description: "Guardian is a mobile app designed to help users manage their medication adherence and prevent overdose incidents. It provides a user-friendly interface for tracking medication intake, setting reminders, and accessing overdose prevention resources.",
+      description: "Guardian is a harm reduction mobile application designed for recreational substance users, particularly young adults like Evelyn who use drugs in isolation or in social settings.",
       technologies: ["Figma", "Canva"],
       projectLink: "/projects/guardian#top",
       gradientFrom: "#F75590",
       gradientTo: "#FF8C94"
-    },
-    {
-      image: CultureCafeImage,
-      imageAlt: "Culture Cafe",
-      category: "Service Design",
-      categoryType: "design",
-      title: "Culture Cafe",
-      description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",
-      technologies: ["Research", "Prototyping"],
-      projectLink: "/projects/culture-cafe#top",
-      gradientFrom: "#7B6F63",
-      gradientTo: "#493B32"
     },
     {
       image: GuardianImage,
@@ -63,6 +39,32 @@ const Projects = () => {
       gradientFrom: "#F75590",
       gradientTo: "#FF8C94"
     },
+    {
+      image: CrimsonPlateImage,
+      imageAlt: "Crimson Plate Website",
+      category: "Front-end",
+      categoryType: "coding",
+      title: "Crimson Plate Website",
+      description: "The goal was to create a responsive, visually engaging, and user-friendly restaurant website that delivers an intuitive, interactive digital experience while accurately reflecting the restaurant's brand, ensuring seamless navigation, performance, and accessibility.",
+      technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+      projectLink: "/projects/crimson-plate#top",
+      gradientFrom: "#F75590",
+      gradientTo: "#FF6B6B"
+    },
+    
+    {
+      image: CultureCafeImage,
+      imageAlt: "Culture Cafe",
+      category: "Service Design",
+      categoryType: "design",
+      title: "Culture Cafe",
+      description: "A digital platform designed to connect people through cultural experiences and foster community engagement.",
+      technologies: ["Research", "Prototyping"],
+      projectLink: "/projects/culture-cafe#top",
+      gradientFrom: "#7B6F63",
+      gradientTo: "#493B32"
+    },
+    
     {
       image: AlzcareImage,
       imageAlt: "AlzCare App Design",
