@@ -14,6 +14,7 @@ import KeyTakeawaysSection from '../Components/KeyTakeawaysSection';
 import ReflectionSection from '../Components/ReflectionSection';
 import NextStepsSection from '../Components/NextStepsSection';
 import GuardianImage from "../assets/Guardiancard.webp"; // Temporarily using Guardian image
+import SolutionsSection from '../Components/SolutionsSection';
 
 const GoodReads = () => {
   return (
@@ -150,7 +151,7 @@ const GoodReads = () => {
 
 
         {/* Project Objectives Section */}
-        <section className="space-y-6 mt-16">
+        <section id="objectives" className="space-y-6 mt-16">
           <div className="flex flex-row items-center gap-2">
             <div className="w-[3vh] sm:w-[3vh] md:w-[4vh] h-[2px] bg-[#493B32]"></div>
             <h2 className="text-2xl sm:text-3xl font-tan text-[#493B32]">
@@ -179,50 +180,73 @@ const GoodReads = () => {
 
         
        
-        {/* User Study & Research Section */}
-        <section id="research" className="space-y-6 mt-16">
+        {/* User Study Section */}
+        <section id="study" className="mt-12">
+          <UserStudySection />
+        </section>
 
-          {/* User Study Details */}
-          <div className="mt-12">
-            <UserStudySection />
-          </div>
+        {/* SUS Score Section */}
+        <section id="sus" className="mt-16">
+          <SUSScoreSection />
+        </section>
 
-          {/* SUS Score Section */}
-          <div className="mt-16">
-            <SUSScoreSection />
-          </div>
+        {/* Tasks & Insights Section */}
+        <section id="tasks" className="mt-16">
+          <TaskInsightSection />
+        </section>
 
-          {/* Task Insights Section */}
-          <div className="mt-16">
-            <TaskInsightSection />
-          </div>
+        {/* Key Takeaways Section */}
+        <section id="takeaways" className="mt-16">
+          <KeyTakeawaysSection />
+        </section>
 
-          {/* Key Takeaways Section */}
-          <div className="mt-16">
-            <KeyTakeawaysSection />
-          </div>
+        {/* Solutions Section */}
+        <section id="solutions" className="mt-16">
+          <SolutionsSection />
+        </section>
 
-          {/* Prototype Section */}
-          <div className="mt-16">
-            
-          </div>
-
-          {/* Reflection Section */}
-          <div className="mt-16">
-            <ReflectionSection />
-          </div>
-
-          {/* Next Steps Section */}
-          <div className="mt-16 mb-16">
-            <NextStepsSection />
+        {/* Prototype Section */}
+        <section id="prototype" className="mt-16">
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-[#493B32]/10">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-tan text-[#493B32]">
+                Interactive Prototype
+              </h2>
+              <a 
+                href="https://www.figma.com/proto/your-prototype-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#493B32] text-white rounded-lg hover:bg-[#493B32]/90 transition-colors group"
+              >
+                <FaFigma className="w-4 h-4" />
+                <span className="font-medium">View in Figma</span>
+                <svg 
+                  className="w-4 h-4 transform transition-transform group-hover:translate-x-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </section>
 
-        
+        {/* Reflections Section */}
+        <section id="reflections" className="mt-16">
+          <ReflectionSection />
+        </section>
 
-       
-
-       
+        {/* Next Steps Section */}
+        <section id="next" className="mt-16 mb-16">
+          <NextStepsSection />
+        </section>
       </div>
     </main>
   );

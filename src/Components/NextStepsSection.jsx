@@ -1,18 +1,18 @@
 import React from 'react';
 import { BsArrowRightCircle } from 'react-icons/bs';
 
-const StepCard = ({ step, number }) => (
+const NextStepCard = ({ step, number }) => (
   <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-[#493B32]/10 hover:shadow-md transition-all group">
     <div className="flex items-start gap-4">
       {/* Step Number */}
       <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#493B32]/5 flex items-center justify-center group-hover:bg-[#493B32]/10 transition-colors">
-        <span className="text-base font-semibold text-[#493B32]">{number}</span>
+        <span className="text-lg font-semibold text-[#493B32]">{number}</span>
       </div>
 
       {/* Step Content */}
       <div className="flex-1">
         <div className="flex items-center gap-3">
-          <BsArrowRightCircle className="text-[#493B32]/40 text-lg group-hover:text-[#493B32]/60 transition-colors" />
+          <BsArrowRightCircle className="text-[#493B32]/40 text-lg group-hover:text-[#493B32] transition-colors" />
           <p className="text-lg text-[#493B32] leading-relaxed">{step}</p>
         </div>
       </div>
@@ -23,7 +23,8 @@ const StepCard = ({ step, number }) => (
 const NextStepsSection = () => {
   const steps = [
     "Conduct second-round testing on mobile experience",
-    "The next step is to develop high fidelity prototypes incorporating the proposed solutions and further validating changes through a second round of user testing."
+    "Explore notifications for discussion replies and new friend activity",
+    "Collaborate with developers for handoff & implementation feasibility"
   ];
 
   return (
@@ -43,13 +44,13 @@ const NextStepsSection = () => {
         </p>
       </div>
 
-      {/* Steps List */}
+      {/* Steps Stack */}
       <div className="space-y-4">
         {steps.map((step, index) => (
-          <StepCard
+          <NextStepCard
             key={index}
             step={step}
-            number={String(index + 1).padStart(2, '0')}
+            number={(index + 1).toString().padStart(2, '0')}
           />
         ))}
       </div>
