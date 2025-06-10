@@ -62,12 +62,12 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
       { path: '/projects/goodreads#overview', icon: IoEyeOutline, label: 'Project Overview' },
       { path: '/projects/goodreads#objectives', icon: IoLocateOutline, label: 'Objectives' },
       { path: '/projects/goodreads#study', icon: IoSearchOutline, label: 'User Study' },
-      { path: '/projects/goodreads#sus-score', icon: IoBarChartOutline, label: 'SUS Score' },
-      { path: '/projects/goodreads#task-insights', icon: IoReaderOutline, label: 'User Task & Insights' },
-      { path: '/projects/goodreads#key-takeaways', icon: IoBulbOutline , label: 'Key Takeaways' },
+      { path: '/projects/goodreads#sus', icon: IoBarChartOutline, label: 'SUS Score' },
+      { path: '/projects/goodreads#tasks', icon: IoReaderOutline, label: 'User Task & Insights' },
+      { path: '/projects/goodreads#takeaways', icon: IoBulbOutline , label: 'Key Takeaways' },
       { path: '/projects/goodreads#solutions', icon: IoConstructOutline , label: 'Solutions' },
-      { path: '/projects/goodreads#reflection', icon: IoChatboxEllipsesOutline , label: 'Reflection' },
-      { path: '/projects/goodreads#next-steps', icon: IoRocketOutline , label: 'Next Steps' }
+      { path: '/projects/goodreads#reflections', icon: IoChatboxEllipsesOutline , label: 'Reflection' },
+      { path: '/projects/goodreads#next', icon: IoRocketOutline , label: 'Next Steps' }
     ]
   };
 
