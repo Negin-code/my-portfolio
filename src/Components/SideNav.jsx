@@ -54,7 +54,7 @@ const SideNav = ({ onCategoryChange, selectedCategory }) => {
     ],
     '/projects/goodreads': [
       { path: '/projects/goodreads#overview', icon: IoEyeOutline, label: 'Project Overview' },
-      { path: '/projects/goodreads#objectives', icon: IoSearchOutline, label: 'Research & Analysis' },
+      { path: '/projects/goodreads#research', icon: IoSearchOutline, label: 'Research & Analysis' },
       { path: '/projects/goodreads#findings', icon: IoListOutline, label: 'Key Findings' },
       { path: '/projects/goodreads#recommendations', icon: IoRocketOutline, label: 'Recommendations' }
     ]
